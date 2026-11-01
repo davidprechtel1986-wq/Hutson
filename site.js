@@ -80,19 +80,21 @@
   }
 
   /* ---------- Galerie + Lightbox ---------- */
-  var G = (S.gallery||[]).filter(function(g){return has(g.src)}), cur = 0;
-  if ($("gal")) {
-    if (!G.length) hide($("galerie"));
-    $("gal").innerHTML = G.map(function(g,i){return '<button type="button" data-i="'+i+'" aria-label="Bild öffnen: '+esc(g.title||"")+'"><img src="'+esc(g.src)+'" alt="'+esc(g.title||"")+'" loading="lazy" width="800" height="600"></button>'}).join("");
-    var lb = $("lb");
-    var show = function(i){ cur = (i+G.length)%G.length; $("lbImg").src = G[cur].src; $("lbImg").alt = G[cur].title||""; $("lbCap").textContent = G[cur].title||""; lb.classList.add("on"); };
-    $("gal").onclick = function(e){ var b = e.target.closest("button"); if (b) show(+b.dataset.i); };
+  var G = (S.gallery||[]).filter(function(g){return has(g.src)}), cur = 0, LBL = G;
+  var lb = $("lb");
+  var show = function(i, list){ if (list) LBL = list; if (!lb || !LBL.length) return; cur = (i+LBL.length)%LBL.length; $("lbImg").src = LBL[cur].src; $("lbImg").alt = LBL[cur].title||""; $("lbCap").textContent = LBL[cur].title||""; lb.classList.add("on"); };
+  if (lb) {
     lb.querySelector(".x").onclick = function(){ lb.classList.remove("on"); };
     lb.querySelector(".prev").onclick = function(){ show(cur-1); };
     lb.querySelector(".next").onclick = function(){ show(cur+1); };
     lb.onclick = function(e){ if (e.target === lb) lb.classList.remove("on"); };
     document.addEventListener("keydown", function(e){ if (!lb.classList.contains("on")) return;
       if (e.key==="Escape") lb.classList.remove("on"); if (e.key==="ArrowLeft") show(cur-1); if (e.key==="ArrowRight") show(cur+1); });
+  }
+  if ($("gal")) {
+    if (!G.length) hide($("galerie"));
+    $("gal").innerHTML = G.map(function(g,i){return '<button type="button" data-i="'+i+'" aria-label="Bild öffnen: '+esc(g.title||"")+'"><img src="'+esc(g.src)+'" alt="'+esc(g.title||"")+'" loading="lazy" width="800" height="600"></button>'}).join("");
+    $("gal").onclick = function(e){ var b = e.target.closest("button"); if (b) show(+b.dataset.i, G); };
   }
 
   /* ---------- Media Kit ---------- */
@@ -161,6 +163,32 @@
       '<a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><button type="button" id="cookieSettings">Cookie-Einstellungen</button></nav>'+
       '<small>© '+y+' '+esc(S.name||"")+' · Fortnite ist eine Marke von Epic Games. Diese Seite steht in keiner Verbindung zu Epic Games.</small>';
     $("cookieSettings").onclick = function(){ showBanner(true); };
+  }
+
+  /* ---------- Projekte (aus config.js → projects) ---------- */
+  if ($("projects")) {
+    var PR = (S.projects||[]).filter(function(p){return has(p.title)});
+    if (!PR.length) hide($("projects"));
+    $("projects").innerHTML = PR.map(function(p,pi){
+      var imgs = (p.images||[]).filter(function(g){return has(g.src)});
+      var media = imgs.length ? '<div class="pj-media"><button type="button" class="pj-main" data-p="'+pi+'" data-i="0" aria-label="Bild öffnen: '+esc(imgs[0].title||p.title)+'"><img src="'+esc(imgs[0].src)+'" alt="'+esc(imgs[0].title||p.title)+'" loading="lazy" width="1280" height="720"><span class="pj-cap">'+esc(imgs[0].title||"")+'</span></button>'+
+        (imgs.length>1?'<div class="pj-thumbs">'+imgs.slice(1).map(function(g,i){return '<button type="button" data-p="'+pi+'" data-i="'+(i+1)+'" aria-label="Bild öffnen: '+esc(g.title||"")+'"><img src="'+esc(g.src)+'" alt="'+esc(g.title||"")+'" loading="lazy" width="400" height="300"></button>'}).join("")+'</div>':'')+'</div>' : '';
+      var head = '<div class="pj-head">'+(has(p.logo)?'<img class="pj-logo" src="'+esc(p.logo)+'" alt="" width="64" height="64" loading="lazy">':'')+'<div><h3>'+esc(p.title)+'</h3>'+(has(p.tag)?'<span class="pj-tag">'+esc(p.tag)+'</span>':'')+'</div></div>';
+      var facts = (p.facts||[]).length ? '<ul class="pj-facts">'+p.facts.map(function(f){return '<li>'+esc(f)+'</li>'}).join("")+'</ul>' : '';
+      var srv = (p.servers||[]).filter(function(x){return has(x.value)}).map(function(x){return '<div class="pj-srv"><div class="pj-srv-t"><small>'+esc(x.label||"")+'</small><code>'+esc(x.value)+'</code>'+(has(x.note)?'<span>'+esc(x.note)+'</span>':'')+'</div><button class="btn small ghost pj-copy" type="button" data-copy="'+esc(x.value)+'"><svg><use href="#i-copy"/></svg>Kopieren</button></div>'}).join("");
+      var btns = (p.buttons||[]).map(function(b){
+        var ic = has(b.icon)?'<svg><use href="#i-'+esc(b.icon)+'"/></svg>':'';
+        if (has(b.mail)) return '<a class="btn small mail mailto" data-subject="'+esc(b.mail)+'">'+ic+esc(b.label)+'</a>';
+        if (!has(b.url)) return '';
+        return '<a class="btn small '+esc(b.style||"")+'" href="'+esc(b.url)+'" target="_blank" rel="noopener">'+ic+esc(b.label)+'</a>';
+      }).join("");
+      return '<article class="hud pj'+(imgs.length?' has-media':'')+'">'+media+'<div class="pj-body">'+head+(has(p.text)?'<p class="pj-text">'+esc(p.text)+'</p>':'')+facts+(srv?'<div class="pj-srvs">'+srv+'</div>':'')+(btns?'<div class="pj-btns">'+btns+'</div>':'')+'</div></article>';
+    }).join("");
+    $("projects").onclick = function(e){
+      var c = e.target.closest(".pj-copy"); if (c) { copyText(c.dataset.copy); return; }
+      var b = e.target.closest("button[data-p]"); if (!b) return;
+      var p = PR[+b.dataset.p]; show(+b.dataset.i, (p.images||[]).filter(function(g){return has(g.src)}));
+    };
   }
 
   /* ---------- Mailto-Buttons (alle mit config.email) ---------- */

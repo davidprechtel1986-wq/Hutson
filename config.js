@@ -157,6 +157,52 @@ window.SITE = {
     { src: "galerie-bild6.jpg", title: "Platzhalter 6" }
   ],
 
+  /* ---------- Projekte ----------
+     Jedes Projekt = ein Eintrag. Felder:
+       title, tag (kleine Zeile), logo (Bild), text (Beschreibung),
+       facts (kurze Stichpunkte), servers (Adressen mit Kopieren-Button),
+       buttons (label, url, style: "gold" | "discord" | "ghost" | "mail", icon: "web" | "discord" | "mail"),
+       images (Bildergalerie, Klick = großes Bild).
+     Bilder vorher auf max. 1600 Pixel Breite verkleinern. Leere Felder werden ausgeblendet. */
+  projects: [
+    {
+      title: "Silberstadt",
+      tag: "Minecraft-Server · Java & Bedrock · Stadt-Rollenspiel",
+      logo: "projekt-silberstadt-logo.jpg",
+      text: "Mein eigener Minecraft-Server: eine lebendige, moderne Stadt mit Rollenspiel. 17 Berufe, Polizei, Rettungsdienst, Post, Kirmes, eigene Bahn, Haustiere zum Hochleveln, über 480 Möbel und eine große Story mit einem Geheimnis unter der Stadt. Ich bin dort Bürgermeister (Hutson2000). Einfach mit der IP rein – ohne Anmeldung, für Java & Bedrock.",
+      facts: ["17+ Berufe & Dienste", "484+ 3D-Möbel", "200 Spieler-Plätze", "Live-Karte in 3D", "Wöchentliche Events"],
+      servers: [
+        { label: "Java Edition (26.3)", value: "silberstadt.com", note: "Mehrspieler → Direkte Verbindung" },
+        { label: "Bedrock / Handy / Konsole", value: "188.102.103.129", note: "Port 19132" }
+      ],
+      buttons: [
+        { label: "Zur Silberstadt-Webseite", url: "https://silberstadt.com", style: "gold", icon: "web" },
+        { label: "Silberstadt-Discord", url: "https://discord.gg/ehbEKg9E5P", style: "discord", icon: "discord" },
+        { label: "Live-Karte", url: "https://karte.silberstadt.com", style: "ghost", icon: "web" }
+      ],
+      images: [
+        { src: "projekt-silberstadt-1.jpg", title: "Silberstadt im Winter (Artwork)" },
+        { src: "projekt-silberstadt-3.jpg", title: "Marktplatz bei Nacht" },
+        { src: "projekt-silberstadt-4.jpg", title: "Altstadt von Silberstadt" },
+        { src: "projekt-silberstadt-2.jpg", title: "Willkommen am Stadttor (Artwork)" },
+        { src: "projekt-silberstadt-5.jpg", title: "Stadtbrunnen – Join-Grafik" }
+      ]
+    },
+    {
+      title: "Agentur videospiel.tv",
+      tag: "Gaming-Agentur · Mitspieler & Creator gesucht",
+      logo: "projekt-agentur-logo.jpg",
+      text: "Mit meiner Gaming-Agentur videospiel.tv bringe ich Gamer, Streamer und Creator zusammen – für gemeinsame Streams, Events, Turniere und Projekte. Du willst mitzocken oder selbst durchstarten? Komm auf den Discord und bewirb dich im Kanal #bewerbungen.",
+      facts: ["Mitspieler gesucht", "Streamer & Creator", "Events & Turniere"],
+      servers: [],
+      buttons: [
+        { label: "Im Discord bewerben", url: "https://discord.gg/erUT47vMTK", style: "discord", icon: "discord" },
+        { label: "Per E-Mail bewerben", mail: "Bewerbung Agentur videospiel.tv", style: "mail", icon: "mail" }
+      ],
+      images: []
+    }
+  ],
+
   /* Impressum: steht direkt in der Datei impressum.html (bitte dort ändern). */
 
   /* Hosting-Anbieter (für die Datenschutzerklärung). Erst eintragen,
