@@ -299,3 +299,85 @@ footer .brand .shield{width:52px}
   50%{filter:drop-shadow(0 0 18px rgba(51,240,255,.6)) drop-shadow(0 0 44px rgba(255,63,164,.45))}}
 @media(max-width:899px){.logo.has-img img{margin:0 auto;width:min(80vw,360px)}}
 @media(prefers-reduced-motion:reduce){.logo.has-img img{animation:none}}
+
+/* =====================================================================
+   Update 01.11.2026: Comic-Foto + weiche Farbübergänge
+   ===================================================================== */
+:root{
+  --grad:linear-gradient(135deg,#1fa3ff 0%,#3f7bff 25%,#6a3cff 50%,#9a3cff 75%,#c13cff 100%);
+  --grad2:linear-gradient(90deg,#33f0ff,#28c8ff,#1fa3ff,#6a6cff,#c13cff,#e43ccf,#ff3fa4,#ff8f6a,#ffe14d,#8ff0a8,#33f0ff);
+  --hot:linear-gradient(180deg,#fff7a0 0%,#ffe14d 25%,#ffc21f 50%,#ffa30f 75%,#ff8a00 100%);
+}
+@supports (background:linear-gradient(in oklch,red,blue)){
+  :root{
+    --grad:linear-gradient(in oklch 135deg,#1fa3ff,#6a3cff 55%,#c13cff);
+    --grad2:linear-gradient(in oklch 90deg,#33f0ff,#1fa3ff,#c13cff,#ff3fa4,#ffe14d,#33f0ff);
+    --hot:linear-gradient(in oklch 180deg,#fff27a,#ffd21f 45%,#ff8a00);
+  }
+}
+
+/* --- Eine durchgehende Aurora über die ganze Seite --- */
+html{background:#07021a}
+body{background:
+  radial-gradient(60% 9% at 12% 4%,rgba(123,44,255,.55),transparent 70%),
+  radial-gradient(55% 8% at 88% 10%,rgba(31,163,255,.38),transparent 70%),
+  radial-gradient(60% 9% at 15% 24%,rgba(51,240,255,.20),transparent 70%),
+  radial-gradient(60% 9% at 85% 34%,rgba(255,63,164,.24),transparent 70%),
+  radial-gradient(65% 9% at 20% 47%,rgba(193,60,255,.30),transparent 70%),
+  radial-gradient(60% 9% at 82% 60%,rgba(31,163,255,.26),transparent 70%),
+  radial-gradient(65% 9% at 18% 73%,rgba(255,63,164,.22),transparent 70%),
+  radial-gradient(60% 9% at 80% 86%,rgba(123,44,255,.32),transparent 70%),
+  radial-gradient(70% 8% at 50% 99%,rgba(51,240,255,.16),transparent 70%),
+  linear-gradient(180deg,#1c0752 0%,#14063f 10%,#100845 22%,#160641 34%,#1a0548 46%,#0d0a44 58%,#170540 70%,#12063f 82%,#0a0326 100%);
+  background-attachment:scroll}
+/* Fester Hintergrund nur noch als sanfter, transparenter Glow-Layer (keine harte Kante mehr) */
+.bg{background:none}
+.bg .c{opacity:.28;filter:blur(80px)}
+.bg .c3{opacity:.2}
+.bg .grid{opacity:.45}
+.scan{opacity:.35}
+
+/* --- Sektionen: transparent, weiche Farbschleier mit ausgeblendeten Kanten --- */
+section{position:relative;isolation:isolate;background:transparent}
+section:before{content:"";position:absolute;z-index:-1;top:-90px;bottom:-90px;left:50%;width:100vw;transform:translateX(-50%);pointer-events:none;
+  background:radial-gradient(55% 60% at var(--wx,20%) 50%,var(--wash,rgba(123,44,255,.22)),transparent 75%),
+             radial-gradient(45% 55% at calc(100% - var(--wx,20%)) 55%,var(--wash2,rgba(31,163,255,.16)),transparent 75%);
+  -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 22%,#000 78%,transparent 100%);
+          mask-image:linear-gradient(180deg,transparent 0,#000 22%,#000 78%,transparent 100%)}
+main>section:nth-of-type(4n+1){--wash:rgba(123,44,255,.22);--wash2:rgba(51,240,255,.12);--wx:18%}
+main>section:nth-of-type(4n+2){--wash:rgba(31,163,255,.18);--wash2:rgba(193,60,255,.16);--wx:80%}
+main>section:nth-of-type(4n+3){--wash:rgba(255,63,164,.16);--wash2:rgba(106,60,255,.18);--wx:22%}
+main>section:nth-of-type(4n){--wash:rgba(51,240,255,.13);--wash2:rgba(255,63,164,.14);--wx:78%}
+
+/* Footer blendet weich ein statt harter Kante */
+footer{position:relative;background:linear-gradient(180deg,transparent 0,rgba(5,1,18,.55) 45%,rgba(5,1,18,.9) 100%);border-top:0}
+footer:before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:var(--grad2);opacity:.7;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 25%,#000 75%,transparent);mask-image:linear-gradient(90deg,transparent,#000 25%,#000 75%,transparent)}
+/* Nav-Linie an den Rändern auslaufen lassen */
+.nav{background:linear-gradient(180deg,rgba(10,3,32,.85),rgba(10,3,32,.7))}
+.nav:after{-webkit-mask-image:linear-gradient(90deg,transparent,#000 15%,#000 85%,transparent);mask-image:linear-gradient(90deg,transparent,#000 15%,#000 85%,transparent)}
+
+/* --- Weichere Verläufe & Glow-Abfall bei Buttons/Karten --- */
+.btn{filter:drop-shadow(0 0 4px rgba(193,60,255,.55)) drop-shadow(0 0 16px rgba(193,60,255,.28))}
+.btn:hover{filter:drop-shadow(0 0 6px rgba(51,240,255,.8)) drop-shadow(0 0 22px rgba(51,240,255,.38)) brightness(1.08)}
+.btn.gold{filter:drop-shadow(0 0 4px rgba(255,190,40,.6)) drop-shadow(0 0 18px rgba(255,170,40,.28))}
+.btn.gold:hover{filter:drop-shadow(0 0 6px rgba(255,210,60,.9)) drop-shadow(0 0 26px rgba(255,190,60,.45))}
+.btn.twitch{background:linear-gradient(135deg,#a970ff,#9146ff 50%,#772ce8)}
+.btn.mail{background:linear-gradient(135deg,#ff3fa4,#f03cc0 35%,#d83ce0 65%,#c13cff);filter:drop-shadow(0 0 4px rgba(255,63,164,.7)) drop-shadow(0 0 18px rgba(255,63,164,.3))}
+@keyframes pulse{50%{filter:drop-shadow(0 0 6px rgba(255,63,164,.95)) drop-shadow(0 0 28px rgba(255,63,164,.5))}}
+.hud{background:linear-gradient(160deg,rgba(40,12,96,.72) 0%,rgba(28,10,78,.74) 35%,rgba(18,6,56,.78) 70%,rgba(12,4,38,.82) 100%)}
+.plat{background:linear-gradient(160deg,rgba(255,255,255,.08),rgba(255,255,255,.04) 50%,rgba(255,255,255,.015))}
+.plat:before{box-shadow:0 0 6px var(--b),0 0 22px color-mix(in srgb,var(--b) 45%,transparent)}
+.h2{filter:drop-shadow(0 4px 0 #2a0a5e) drop-shadow(0 0 8px rgba(255,170,40,.3)) drop-shadow(0 0 28px rgba(255,120,40,.18))}
+.logo .l1{filter:drop-shadow(0 6px 0 #2a0a5e) drop-shadow(0 0 10px rgba(255,170,40,.4)) drop-shadow(0 0 36px rgba(255,120,40,.2))}
+.slogan{text-shadow:0 0 6px rgba(51,240,255,.55),0 0 22px rgba(51,240,255,.25)}
+
+/* --- Comic-Foto: dicke schwarze Outline + Neon-Versatzschatten --- */
+.photo{max-width:400px;padding:0 22px 22px 0}
+.photo .frame,.about .mini{clip-path:none;padding:0;background:#0b0716;border:6px solid #000;border-radius:10px;
+  box-shadow:8px 8px 0 #ff3fa4,16px 16px 0 #33f0ff,0 0 26px rgba(193,60,255,.45),18px 18px 50px rgba(51,240,255,.3);transform:rotate(-1.5deg)}
+.photo .frame:before,.about .mini:before,.photo .tick,.about .mini .tick,.photo:after{display:none}
+.photo img,.about .mini img{display:block;aspect-ratio:1/1;object-position:50% 50%;clip-path:none;border-radius:4px;filter:none}
+.photo .badge{left:-10px;bottom:40px;border:3px solid #000;box-shadow:4px 4px 0 #000}
+.photo .tag2{right:6px;top:18px;border:3px solid #000;box-shadow:4px 4px 0 #000,0 0 16px rgba(145,70,255,.6)}
+.about .mini{transform:rotate(1.5deg);margin:0 16px 16px 0}
