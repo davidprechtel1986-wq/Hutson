@@ -533,3 +533,9 @@ footer small{color:#9a92c4}
 /* Galerie-Bildunterschriften */
 .gal .gal-cap{position:absolute;left:0;right:0;bottom:0;padding:22px 12px 9px;font-size:.82rem;font-weight:600;line-height:1.25;text-align:left;color:#fff;background:linear-gradient(transparent,rgba(5,5,15,.85));pointer-events:none;text-shadow:0 1px 2px rgba(0,0,0,.6)}
 @media(max-width:600px){.gal .gal-cap{font-size:.7rem;padding:16px 8px 6px}}
+
+/* Umlaut-Fix (01.11.2026): Bei Verlaufs-Text (background-clip:text) wird nur innerhalb
+   der Box gemalt. Die Pünktchen von Ä/Ö/Ü ragen bei Luckiest Guy über die Zeilenhöhe
+   hinaus und wurden abgeschnitten. Extra Innenabstand oben (ohne Layout-Verschiebung). */
+.hot{padding-top:.3em}
+.h2,.pj h3,.stat .v,.legal h1,.mbox h3,.logo .l1,.logo .l2{padding-top:.3em;margin-top:-.3em}
