@@ -93,7 +93,7 @@
   }
   if ($("gal")) {
     if (!G.length) hide($("galerie"));
-    $("gal").innerHTML = G.map(function(g,i){return '<button type="button" data-i="'+i+'" aria-label="Bild öffnen: '+esc(g.title||"")+'"><img src="'+esc(g.src)+'" alt="'+esc(g.title||"")+'" loading="lazy" width="800" height="600"></button>'}).join("");
+    $("gal").innerHTML = G.map(function(g,i){return '<button type="button" data-i="'+i+'" aria-label="Bild öffnen: '+esc(g.title||"")+'"><img src="'+esc(g.src)+'" alt="'+esc(g.title||"")+'" loading="lazy" width="800" height="600">'+(has(g.title)?'<span class="gal-cap">'+esc(g.title)+'</span>':'')+'</button>'}).join("");
     $("gal").onclick = function(e){ var b = e.target.closest("button"); if (b) show(+b.dataset.i, G); };
   }
 

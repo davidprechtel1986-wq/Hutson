@@ -53,7 +53,7 @@ window.SITE = {
   socials: {
     twitch:    "https://twitch.tv/hudson2000",
     tiktok:    "https://www.tiktok.com/@videospiel.tv",
-    youtube:   "https://www.youtube.com/@1986ibel",
+    youtube:   "https://www.youtube.com/channel/UCEpRciz1yHu58SWeerFHAKw",   // feste Kanal-Adresse (funktioniert auch nach Handle-Änderung)
     facebook:  "",   // z. B. "https://www.facebook.com/DEIN-NAME"
     instagram: "",   // optional, z. B. "https://www.instagram.com/DEIN-NAME"
     discord:   "https://discord.gg/erUT47vMTK"
@@ -143,18 +143,17 @@ window.SITE = {
 
   /* ---------- Bildergalerie ----------
      So fügst du eigene Fotos hinzu:
-       1. Bild (JPG/PNG/WebP) in den Ordner  images/galerie/  kopieren.
-       2. Unten eine Zeile ergänzen:  { src: "images/galerie/meinbild.jpg", title: "Mein Victory Royale" },
-       3. Speichern – fertig. Die Platzhalter-Bilder (bild1–bild6) kannst du
-          einfach löschen oder durch eigene Bilder mit gleichem Namen ersetzen.
+       1. Bild (JPG/PNG/WebP) in denselben Ordner wie diese Datei kopieren.
+       2. Unten eine Zeile ergänzen:  { src: "meinbild.jpg", title: "Mein Victory Royale" },
+       3. Speichern – fertig. Der Titel steht unter dem Bild und in der Großansicht.
      Tipp: Bilder vorher auf ca. 1600 Pixel Breite verkleinern, dann lädt die Seite schneller. */
   gallery: [
-    { src: "galerie-bild1.jpg", title: "Platzhalter 1" },
-    { src: "galerie-bild2.jpg", title: "Platzhalter 2" },
-    { src: "galerie-bild3.jpg", title: "Platzhalter 3" },
-    { src: "galerie-bild4.jpg", title: "Platzhalter 4" },
-    { src: "galerie-bild5.jpg", title: "Platzhalter 5" },
-    { src: "galerie-bild6.jpg", title: "Platzhalter 6" }
+    { src: "galerie-01.jpg", title: "Abendstimmung an der Stadtstraße – Minecraft" },
+    { src: "galerie-02.jpg", title: "Regen auf dem Stadtplatz – Minecraft" },
+    { src: "galerie-03.jpg", title: "Am Stadtrand von Silberstadt – Minecraft" },
+    { src: "galerie-04.jpg", title: "Gemütliche Holzhütte – Minecraft" },
+    { src: "galerie-05.jpg", title: "Hütte zwischen Birken – Minecraft" },
+    { src: "galerie-06.jpg", title: "Unterwegs im Wald – Minecraft" }
   ],
 
   /* ---------- Projekte ----------
@@ -199,6 +198,26 @@ window.SITE = {
         { label: "Im Discord bewerben", url: "https://discord.gg/erUT47vMTK", style: "discord", icon: "discord" },
         { label: "Per E-Mail bewerben", mail: "Bewerbung Agentur videospiel.tv", style: "mail", icon: "mail" }
       ],
+      images: []
+    },
+    {
+      title: "Schrottkönig Tycoon",
+      tag: "Eigene Fortnite-Insel (UEFN) · In Arbeit",
+      logo: "",
+      text: "Meine eigene Fortnite-Insel, gebaut im Unreal Editor for Fortnite: ein Tycoon auf einem Neon-Schrottplatz. Hof claimen, Kasse leeren, nach und nach sechs Maschinen kaufen und mit Rebirth neu durchstarten. Die Insel ist noch in Arbeit und noch nicht veröffentlicht.",
+      facts: ["In Arbeit", "4 Höfe", "6 Maschinen", "Rebirth-System"],
+      servers: [],
+      buttons: [],
+      images: []
+    },
+    {
+      title: "Eigene Stream-Tools",
+      tag: "Selbst gebaut für meine Streams",
+      logo: "",
+      text: "Für meine Streams baue ich mir eigene Helfer: Minecraft Stream FX bringt Effekte wie Creeper-Explosion, Totem, Feuerwerk oder Diamanten-Regen per Hotkey ins Bild – auf Wunsch ausgelöst durch TikTok-Geschenke. Dazu kommen ein Countdown-Timer im Minecraft-Look und eine Highlight-Cam, die automatisch Hochformat-Clips für TikTok speichert.",
+      facts: ["Minecraft Stream FX", "TikTok-Geschenke → Effekte", "Minecraft-Timer", "Highlight-Cam für TikTok"],
+      servers: [],
+      buttons: [],
       images: []
     }
   ],
