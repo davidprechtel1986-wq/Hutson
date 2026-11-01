@@ -51,7 +51,7 @@ window.SITE = {
   /* ---------- Social-Media-Links ----------
      Komplette Adresse eintragen. Leer lassen = Button wird versteckt. */
   socials: {
-    twitch:    "https://twitch.tv/prechtilive",
+    twitch:    "https://twitch.tv/hudson2000",
     tiktok:    "https://www.tiktok.com/@videospiel.tv",
     youtube:   "",   // TODO: YouTube-Kanal-Link von „David Hutson2000“ eintragen, z. B. "https://www.youtube.com/@DEIN-HANDLE"
     facebook:  "",   // z. B. "https://www.facebook.com/DEIN-NAME"
@@ -60,7 +60,7 @@ window.SITE = {
   },
   /* Anzeigenamen unter den Logos (nur Text) */
   socialNames: {
-    twitch: "prechtilive",
+    twitch: "hudson2000",
     tiktok: "@videospiel.tv",
     youtube: "David Hutson2000",
     facebook: "",
@@ -73,12 +73,12 @@ window.SITE = {
   showComingSoon: true,
 
   /* Twitch-Kanalname für den Live-Player (nur der Name, kein Link) */
-  twitchChannel: "prechtilive",
+  twitchChannel: "hudson2000",
 
   /* ---------- Kontakt ----------
      Deine E-Mail-Adresse (für Kontakt-, Sponsoring- und Projekt-Buttons).
      ACHTUNG: Platzhalter – bitte deine echte Hotmail-Adresse eintragen! */
-  email: "DEINE-ADRESSE@hotmail.de",
+  email: "david.prechtel1986@hotmail.de",
 
   /* ---------- Spenden ----------
      Die IBAN ist eingetragen. PayPal, Kontoinhaber und Bank sind noch
@@ -97,11 +97,14 @@ window.SITE = {
   /* ---------- Stream-Zeiten ----------
      Tage und Uhrzeiten frei anpassbar. Einträge löschen oder hinzufügen. */
   schedule: [
-    { day: "Montag",     time: "18:00 – 22:00", game: "Fortnite" },
-    { day: "Mittwoch",   time: "18:00 – 22:00", game: "Fortnite" },
-    { day: "Freitag",    time: "19:00 – 00:00", game: "Fortnite Night" },
-    { day: "Samstag",    time: "15:00 – 22:00", game: "Fortnite Marathon" },
-    { day: "Sonntag",    time: "16:00 – 21:00", game: "Minecraft Silberstadt / Fortnite" }
+    { day: "Sonntag, 1.11.",    time: "19:00 – 22:00", game: "Fortnite" },
+    { day: "Montag, 2.11.",     time: "19:00 – 22:00", game: "Fortnite & mehr" },
+    { day: "Dienstag, 3.11.",   time: "19:00 – 22:00", game: "Fortnite & mehr" },
+    { day: "Mittwoch, 4.11.",   time: "19:00 – 22:00", game: "Fortnite & mehr" },
+    { day: "Donnerstag, 5.11.", time: "19:00 – 22:00", game: "Fortnite & mehr" },
+    { day: "Freitag, 6.11.",    time: "19:00 – 22:00", game: "Fortnite & mehr" },
+    { day: "Samstag, 7.11.",    time: "19:00 – 22:00", game: "Fortnite & mehr" },
+    { day: "Sonntag, 8.11.",    time: "19:00 – 22:00", game: "Fortnite & mehr" }
   ],
   scheduleNote: "Alle Zeiten in deutscher Zeit. Spontane Streams kündige ich auf TikTok an!",
 
@@ -109,14 +112,14 @@ window.SITE = {
      Reichweite: NUR echte Zahlen eintragen (z. B. "1.250").
      Leer lassen ("") = es steht automatisch „auf Anfrage“ da. */
   stats: [
-    { label: "TikTok Follower",       value: "" },
-    { label: "Twitch Follower",       value: "" },
-    { label: "YouTube Abonnenten",    value: "" },
+    { label: "TikTok Follower",       value: "12.6K" },
+    { label: "Twitch Follower",       value: "166" },
+    { label: "YouTube Abonnenten",    value: "48" },
     { label: "Ø Zuschauer im Stream", value: "" },
     { label: "Stream-Stunden / Monat", value: "" }
   ],
   /* Link zu deinem Media Kit als PDF (optional, z. B. "mediakit.pdf"). Leer = Button versteckt. */
-  mediaKitPdf: "",
+  mediaKitPdf: "HUTSON-LIVE-Media-Kit.pdf",
   /* Werbeformate, die du anbietest (Titel + kurze Beschreibung). */
   adFormats: [
     { icon: "🎮", title: "Stream-Sponsoring",        text: "Deine Marke als Partner eines Streams oder einer ganzen Stream-Reihe – mit Erwähnung, Overlay und Chat-Befehl." },
