@@ -1,6 +1,6 @@
 /* HUTSON LIVE – Creator-Webseite (Gaming / Fortnite-Style, eigene Grafik) */
-@font-face{font-family:"Lucky";src:url("fonts/LuckiestGuy-Regular.ttf") format("truetype");font-display:swap}
-@font-face{font-family:"AntonL";src:url("fonts/Anton-Regular.ttf") format("truetype");font-display:swap}
+@font-face{font-family:"Lucky";src:url("LuckiestGuy-Regular.ttf") format("truetype");font-display:swap}
+@font-face{font-family:"AntonL";src:url("Anton-Regular.ttf") format("truetype");font-display:swap}
 :root{
   --blue:#1fa3ff;--cyan:#33f0ff;--purple:#8a2be2;--violet:#c13cff;--deep:#0a0320;--deep2:#120530;
   --yellow:#ffe14d;--orange:#ff9a1f;--pink:#ff3fa4;--white:#fff;--muted:#b9b0de;

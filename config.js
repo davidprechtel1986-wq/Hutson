@@ -24,15 +24,15 @@ window.SITE = {
      Leer lassen ("") = statt Bild wird der Name als Text-Logo gezeigt.
      Favicon / Vorschaubild für Links (og:image) stehen im <head> von index.html. */
   logo: {
-    full:   "images/logo/hutson-logo-720.png",
-    shield: "images/logo/hutson-shield-128.png"
+    full:   "logo-hutson-logo-720.png",
+    shield: "logo-hutson-shield-128.png"
   },
   slogan: "Gaming-Creator • Fortnite • Offen für Sponsoren",   // Zeile unter dem Logo
   heroText: "Fortnite-Streams voller Action, Clips auf TikTok & YouTube und eine Community, die wächst. Ich starte im Gaming richtig durch – und suche Marken & Partner, die mit dabei sein wollen.",
 
   /* Dein Foto (liegt im Ordner images/). Einfach Datei austauschen
      oder hier einen anderen Dateinamen eintragen. Leer = kein Foto. */
-  photo: "images/david.jpg",
+  photo: "david.jpg",
   photoAlt: "David – HUTSON LIVE",
 
   /* ---------- Über mich ----------
@@ -145,12 +145,12 @@ window.SITE = {
           einfach löschen oder durch eigene Bilder mit gleichem Namen ersetzen.
      Tipp: Bilder vorher auf ca. 1600 Pixel Breite verkleinern, dann lädt die Seite schneller. */
   gallery: [
-    { src: "images/galerie/bild1.jpg", title: "Platzhalter 1" },
-    { src: "images/galerie/bild2.jpg", title: "Platzhalter 2" },
-    { src: "images/galerie/bild3.jpg", title: "Platzhalter 3" },
-    { src: "images/galerie/bild4.jpg", title: "Platzhalter 4" },
-    { src: "images/galerie/bild5.jpg", title: "Platzhalter 5" },
-    { src: "images/galerie/bild6.jpg", title: "Platzhalter 6" }
+    { src: "galerie-bild1.jpg", title: "Platzhalter 1" },
+    { src: "galerie-bild2.jpg", title: "Platzhalter 2" },
+    { src: "galerie-bild3.jpg", title: "Platzhalter 3" },
+    { src: "galerie-bild4.jpg", title: "Platzhalter 4" },
+    { src: "galerie-bild5.jpg", title: "Platzhalter 5" },
+    { src: "galerie-bild6.jpg", title: "Platzhalter 6" }
   ],
 
   /* Impressum: steht direkt in der Datei impressum.html (bitte dort ändern). */
