@@ -56,7 +56,7 @@ window.SITE = {
     youtube:   "",   // TODO: YouTube-Kanal-Link von „David Hutson2000“ eintragen, z. B. "https://www.youtube.com/@DEIN-HANDLE"
     facebook:  "",   // z. B. "https://www.facebook.com/DEIN-NAME"
     instagram: "",   // optional, z. B. "https://www.instagram.com/DEIN-NAME"
-    discord:   ""    // optional, Einladungslink z. B. "https://discord.gg/XXXXXX"
+    discord:   "https://discord.gg/erUT47vMTK"
   },
   /* Anzeigenamen unter den Logos (nur Text) */
   socialNames: {
