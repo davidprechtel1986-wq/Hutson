@@ -27,8 +27,8 @@ window.SITE = {
     full:   "logo-hutson-logo-720.png",
     shield: "logo-hutson-shield-128.png"
   },
-  slogan: "Gaming-Creator • Fortnite • Offen für Sponsoren",   // Zeile unter dem Logo
-  heroText: "Fortnite-Streams voller Action, Clips auf TikTok & YouTube und eine Community, die wächst. Ich starte im Gaming richtig durch – und suche Marken & Partner, die mit dabei sein wollen.",
+  slogan: "Gaming-Creator • Fortnite & viele weitere Games • Offen für Sponsoren",   // Zeile unter dem Logo
+  heroText: "Gaming-Streams voller Action – Fortnite, Minecraft und viele weitere Games, Clips auf TikTok & YouTube und eine Community, die wächst. Ich starte im Gaming richtig durch – und suche Marken & Partner, die mit dabei sein wollen.",
 
   /* Dein Foto (liegt im Ordner images/). Einfach Datei austauschen
      oder hier einen anderen Dateinamen eintragen. Leer = kein Foto. */
@@ -38,9 +38,9 @@ window.SITE = {
   /* ---------- Über mich ----------
      Jeder Eintrag in der Liste = ein eigener Absatz. */
   about: [
-    "Hey, ich bin David! Unter dem Namen HUTSON LIVE streame ich Fortnite – mal entspannt, mal voll im Sweat-Modus, aber immer mit guter Laune und mit euch im Chat.",
+    "Hey, ich bin David! Unter dem Namen HUTSON LIVE streame ich nicht nur Fortnite, sondern viele verschiedene Games – mal entspannt, mal voll im Sweat-Modus, aber immer mit guter Laune und mit euch im Chat.",
     "Gaming ist für mich mehr als nur zocken: Ich liebe es, gemeinsam mit der Community Siege zu feiern, über Fails zu lachen und neue Season-Inhalte als Erster auszuprobieren.",
-    "Neben Fortnite betreibe ich auch den Minecraft-Server „Silberstadt“ – ein Ort zum Bauen, Erkunden und Abhängen mit der Community.",
+    "Neben den Streams betreibe ich auch den Minecraft-Server „Silberstadt“ – ein Ort zum Bauen, Erkunden und Abhängen mit der Community.",
     "Beruflich baue ich mit meinem KI Web Studio Websites & Web-Apps – schau gerne vorbei!"
   ],
 

@@ -301,83 +301,194 @@ footer .brand .shield{width:52px}
 @media(prefers-reduced-motion:reduce){.logo.has-img img{animation:none}}
 
 /* =====================================================================
-   Update 01.11.2026: Comic-Foto + weiche Farbübergänge
+   REDESIGN 01.11.2026 – Premium-Palette, Aurora, Glas-Karten
+   Palette: Nacht #0b0620 · Cyan #3ee8ff · Violett #8b5cff · Pink #ff4fb3 · Gold #ffc94d
    ===================================================================== */
 :root{
-  --grad:linear-gradient(135deg,#1fa3ff 0%,#3f7bff 25%,#6a3cff 50%,#9a3cff 75%,#c13cff 100%);
-  --grad2:linear-gradient(90deg,#33f0ff,#28c8ff,#1fa3ff,#6a6cff,#c13cff,#e43ccf,#ff3fa4,#ff8f6a,#ffe14d,#8ff0a8,#33f0ff);
-  --hot:linear-gradient(180deg,#fff7a0 0%,#ffe14d 25%,#ffc21f 50%,#ffa30f 75%,#ff8a00 100%);
+  --night:#0b0620;--night2:#140a33;
+  --cyan:#3ee8ff;--blue:#5aa8ff;--violet:#8b5cff;--purple:#8b5cff;--pink:#ff4fb3;--yellow:#ffc94d;--orange:#ffa94d;
+  --muted:#c4bde6;--deep:#0b0620;
+  --ink:#140827;
+  /* Fallbacks (viele Zwischenstufen, kein Grau in der Mitte) */
+  --grad:linear-gradient(120deg,#3ee8ff 0%,#5fb6ff 22%,#7a86ff 45%,#8b5cff 62%,#c257e0 82%,#ff4fb3 100%);
+  --grad2:linear-gradient(90deg,#3ee8ff,#6aa0ff,#8b5cff,#c257e0,#ff4fb3,#ff8c80,#ffc94d,#ff8c80,#ff4fb3,#8b5cff,#3ee8ff);
+  --hot:linear-gradient(180deg,#fff1b8 0%,#ffdf80 30%,#ffc94d 60%,#ffa94d 100%);
+  --pinkgrad:linear-gradient(120deg,#ff4fb3,#e252cf 40%,#b058ee 75%,#8b5cff);
+  --glass:linear-gradient(155deg,rgba(255,255,255,.085),rgba(255,255,255,.035) 45%,rgba(139,92,255,.05));
 }
 @supports (background:linear-gradient(in oklch,red,blue)){
   :root{
-    --grad:linear-gradient(in oklch 135deg,#1fa3ff,#6a3cff 55%,#c13cff);
-    --grad2:linear-gradient(in oklch 90deg,#33f0ff,#1fa3ff,#c13cff,#ff3fa4,#ffe14d,#33f0ff);
-    --hot:linear-gradient(in oklch 180deg,#fff27a,#ffd21f 45%,#ff8a00);
+    --grad:linear-gradient(in oklch 120deg,#3ee8ff,#8b5cff 60%,#ff4fb3);
+    --grad2:linear-gradient(in oklch 90deg,#3ee8ff,#8b5cff,#ff4fb3,#ffc94d,#ff4fb3,#8b5cff,#3ee8ff);
+    --hot:linear-gradient(in oklch 180deg,#fff1b8,#ffc94d 55%,#ffa94d);
+    --pinkgrad:linear-gradient(in oklch 120deg,#ff4fb3,#8b5cff);
   }
 }
 
-/* --- Eine durchgehende Aurora über die ganze Seite --- */
-html{background:#07021a}
-body{background:
-  radial-gradient(60% 9% at 12% 4%,rgba(123,44,255,.55),transparent 70%),
-  radial-gradient(55% 8% at 88% 10%,rgba(31,163,255,.38),transparent 70%),
-  radial-gradient(60% 9% at 15% 24%,rgba(51,240,255,.20),transparent 70%),
-  radial-gradient(60% 9% at 85% 34%,rgba(255,63,164,.24),transparent 70%),
-  radial-gradient(65% 9% at 20% 47%,rgba(193,60,255,.30),transparent 70%),
-  radial-gradient(60% 9% at 82% 60%,rgba(31,163,255,.26),transparent 70%),
-  radial-gradient(65% 9% at 18% 73%,rgba(255,63,164,.22),transparent 70%),
-  radial-gradient(60% 9% at 80% 86%,rgba(123,44,255,.32),transparent 70%),
-  radial-gradient(70% 8% at 50% 99%,rgba(51,240,255,.16),transparent 70%),
-  linear-gradient(180deg,#1c0752 0%,#14063f 10%,#100845 22%,#160641 34%,#1a0548 46%,#0d0a44 58%,#170540 70%,#12063f 82%,#0a0326 100%);
-  background-attachment:scroll}
-/* Fester Hintergrund nur noch als sanfter, transparenter Glow-Layer (keine harte Kante mehr) */
-.bg{background:none}
-.bg .c{opacity:.28;filter:blur(80px)}
-.bg .c3{opacity:.2}
-.bg .grid{opacity:.45}
-.scan{opacity:.35}
+/* ---------- Basis + Aurora (fest hinter der ganzen Seite) ---------- */
+html{background:var(--night)}
+body{background:transparent;color:#f4f1ff}
+.bg{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none;
+  background:radial-gradient(120% 80% at 50% 0%,#170c3d 0%,#0e0729 45%,var(--night) 100%)}
+.bg .grid{display:none}
+.bg .c,.bg:before,.bg:after{content:"";position:absolute;border-radius:50%;filter:blur(100px);opacity:.55;will-change:transform}
+.bg .c1{width:70vw;height:70vw;max-width:1100px;max-height:1100px;left:-22vw;top:-28vw;background:radial-gradient(circle,#8b5cff 0%,rgba(139,92,255,0) 68%);animation:au1 48s ease-in-out infinite alternate}
+.bg .c2{width:62vw;height:62vw;max-width:1000px;max-height:1000px;right:-20vw;top:8vh;background:radial-gradient(circle,#3ee8ff 0%,rgba(62,232,255,0) 66%);opacity:.38;animation:au2 56s ease-in-out infinite alternate}
+.bg .c3{width:66vw;height:66vw;max-width:1050px;max-height:1050px;left:18vw;bottom:-36vw;background:radial-gradient(circle,#ff4fb3 0%,rgba(255,79,179,0) 66%);opacity:.36;animation:au3 62s ease-in-out infinite alternate}
+.bg:before{width:46vw;height:46vw;max-width:760px;max-height:760px;left:-12vw;bottom:-6vh;background:radial-gradient(circle,#3ee8ff 0%,rgba(62,232,255,0) 66%);opacity:.22;animation:au2 70s ease-in-out infinite alternate-reverse}
+.bg:after{width:40vw;height:40vw;max-width:680px;max-height:680px;right:-8vw;bottom:10vh;background:radial-gradient(circle,#ffc94d 0%,rgba(255,201,77,0) 66%);opacity:.12;animation:au1 80s ease-in-out infinite alternate-reverse}
+@keyframes au1{0%{transform:translate(0,0) scale(1)}50%{transform:translate(14vw,10vh) scale(1.12)}100%{transform:translate(4vw,22vh) scale(.95)}}
+@keyframes au2{0%{transform:translate(0,0) scale(1)}50%{transform:translate(-12vw,14vh) scale(1.1)}100%{transform:translate(-4vw,-6vh) scale(1.05)}}
+@keyframes au3{0%{transform:translate(0,0) scale(1)}50%{transform:translate(-10vw,-12vh) scale(1.08)}100%{transform:translate(12vw,-4vh) scale(1)}}
+/* Feines Korn gegen Banding (ersetzt die Scanlines) */
+.scan{position:fixed;inset:0;z-index:50;pointer-events:none;opacity:.07;mix-blend-mode:soft-light;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E") repeat}
 
-/* --- Sektionen: transparent, weiche Farbschleier mit ausgeblendeten Kanten --- */
-section{position:relative;isolation:isolate;background:transparent}
-section:before{content:"";position:absolute;z-index:-1;top:-90px;bottom:-90px;left:50%;width:100vw;transform:translateX(-50%);pointer-events:none;
-  background:radial-gradient(55% 60% at var(--wx,20%) 50%,var(--wash,rgba(123,44,255,.22)),transparent 75%),
-             radial-gradient(45% 55% at calc(100% - var(--wx,20%)) 55%,var(--wash2,rgba(31,163,255,.16)),transparent 75%);
-  -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 22%,#000 78%,transparent 100%);
-          mask-image:linear-gradient(180deg,transparent 0,#000 22%,#000 78%,transparent 100%)}
-main>section:nth-of-type(4n+1){--wash:rgba(123,44,255,.22);--wash2:rgba(51,240,255,.12);--wx:18%}
-main>section:nth-of-type(4n+2){--wash:rgba(31,163,255,.18);--wash2:rgba(193,60,255,.16);--wx:80%}
-main>section:nth-of-type(4n+3){--wash:rgba(255,63,164,.16);--wash2:rgba(106,60,255,.18);--wx:22%}
-main>section:nth-of-type(4n){--wash:rgba(51,240,255,.13);--wash2:rgba(255,63,164,.14);--wx:78%}
+/* ---------- Sektionen: keine eigenen Flächen, Linien oder Kanten ---------- */
+section{position:relative;background:none;border:0}
+section:before,section:after{content:none}
 
-/* Footer blendet weich ein statt harter Kante */
-footer{position:relative;background:linear-gradient(180deg,transparent 0,rgba(5,1,18,.55) 45%,rgba(5,1,18,.9) 100%);border-top:0}
-footer:before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:var(--grad2);opacity:.7;
-  -webkit-mask-image:linear-gradient(90deg,transparent,#000 25%,#000 75%,transparent);mask-image:linear-gradient(90deg,transparent,#000 25%,#000 75%,transparent)}
-/* Nav-Linie an den Rändern auslaufen lassen */
-.nav{background:linear-gradient(180deg,rgba(10,3,32,.85),rgba(10,3,32,.7))}
-.nav:after{-webkit-mask-image:linear-gradient(90deg,transparent,#000 15%,#000 85%,transparent);mask-image:linear-gradient(90deg,transparent,#000 15%,#000 85%,transparent)}
+/* ---------- Navigation: Glas, ohne harte Linie ---------- */
+.nav{background:rgba(11,6,32,.55);backdrop-filter:blur(18px) saturate(150%);-webkit-backdrop-filter:blur(18px) saturate(150%);border-bottom:0;
+  box-shadow:0 10px 30px -18px rgba(0,0,0,.6)}
+.nav:after{height:1px;bottom:0;background:var(--grad2);background-size:300% 100%;opacity:.55;animation:flow 24s linear infinite;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 20%,#000 80%,transparent);mask-image:linear-gradient(90deg,transparent,#000 20%,#000 80%,transparent)}
+.nav .links a{color:#e9e5ff}
+.nav .links a:hover{color:var(--cyan);background:rgba(62,232,255,.08)}
+.brand span{color:var(--yellow)}
+.brand .shield{filter:drop-shadow(0 0 6px rgba(139,92,255,.6))}
 
-/* --- Weichere Verläufe & Glow-Abfall bei Buttons/Karten --- */
-.btn{filter:drop-shadow(0 0 4px rgba(193,60,255,.55)) drop-shadow(0 0 16px rgba(193,60,255,.28))}
-.btn:hover{filter:drop-shadow(0 0 6px rgba(51,240,255,.8)) drop-shadow(0 0 22px rgba(51,240,255,.38)) brightness(1.08)}
-.btn.gold{filter:drop-shadow(0 0 4px rgba(255,190,40,.6)) drop-shadow(0 0 18px rgba(255,170,40,.28))}
-.btn.gold:hover{filter:drop-shadow(0 0 6px rgba(255,210,60,.9)) drop-shadow(0 0 26px rgba(255,190,60,.45))}
-.btn.twitch{background:linear-gradient(135deg,#a970ff,#9146ff 50%,#772ce8)}
-.btn.mail{background:linear-gradient(135deg,#ff3fa4,#f03cc0 35%,#d83ce0 65%,#c13cff);filter:drop-shadow(0 0 4px rgba(255,63,164,.7)) drop-shadow(0 0 18px rgba(255,63,164,.3))}
-@keyframes pulse{50%{filter:drop-shadow(0 0 6px rgba(255,63,164,.95)) drop-shadow(0 0 28px rgba(255,63,164,.5))}}
-.hud{background:linear-gradient(160deg,rgba(40,12,96,.72) 0%,rgba(28,10,78,.74) 35%,rgba(18,6,56,.78) 70%,rgba(12,4,38,.82) 100%)}
-.plat{background:linear-gradient(160deg,rgba(255,255,255,.08),rgba(255,255,255,.04) 50%,rgba(255,255,255,.015))}
-.plat:before{box-shadow:0 0 6px var(--b),0 0 22px color-mix(in srgb,var(--b) 45%,transparent)}
-.h2{filter:drop-shadow(0 4px 0 #2a0a5e) drop-shadow(0 0 8px rgba(255,170,40,.3)) drop-shadow(0 0 28px rgba(255,120,40,.18))}
-.logo .l1{filter:drop-shadow(0 6px 0 #2a0a5e) drop-shadow(0 0 10px rgba(255,170,40,.4)) drop-shadow(0 0 36px rgba(255,120,40,.2))}
-.slogan{text-shadow:0 0 6px rgba(51,240,255,.55),0 0 22px rgba(51,240,255,.25)}
+/* ---------- Typo ---------- */
+.h2{background:linear-gradient(180deg,#fff1b8 0%,#ffd970 40%,#ffb45e 100%);-webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 3px 0 #2a0f55) drop-shadow(0 0 14px rgba(255,201,77,.18))}
+@supports (background:linear-gradient(in oklch,red,blue)){.h2{background:linear-gradient(in oklch 180deg,#fff1b8,#ffc94d 55%,#ff9a6e)}}
+.h2{-webkit-background-clip:text;background-clip:text}
+.kicker{color:var(--cyan);opacity:.9}
+.lead,.card p,.note,.stat .k,.plat small,.sched .g{color:var(--muted)}
+.slogan{color:var(--cyan);text-shadow:0 0 14px rgba(62,232,255,.35)}
+.slogan b{color:var(--yellow)}
+.hero p.txt,.about .txt p,.ul li,.legal p,.legal li{color:#e6e1fb}
 
-/* --- Comic-Foto: dicke schwarze Outline + Neon-Versatzschatten --- */
+/* ---------- Glas-Karten (alle .hud) ---------- */
+.hud{clip-path:none;border-radius:18px;background:var(--glass);
+  backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);
+  box-shadow:0 20px 50px -24px rgba(0,0,0,.7),0 0 40px -18px rgba(139,92,255,.45)}
+.hud:before{clip-path:none;border-radius:inherit;padding:1px;background:linear-gradient(140deg,rgba(62,232,255,.65),rgba(139,92,255,.35) 40%,rgba(255,79,179,.25) 70%,rgba(255,201,77,.45));
+  animation:none;opacity:.9}
+@supports (background:linear-gradient(in oklch,red,blue)){
+  .hud:before{background:linear-gradient(in oklch 140deg,rgba(62,232,255,.7),rgba(139,92,255,.3),rgba(255,79,179,.25),rgba(255,201,77,.5))}}
+.hud .tick{display:none}
+.card{transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 24px 50px -24px rgba(0,0,0,.75),0 0 46px -14px rgba(62,232,255,.45)}
+.card .em{filter:saturate(.9)}
+
+/* Plattform-Kacheln */
+.plat{clip-path:none;border-radius:16px;border:0;background:var(--glass);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 18px 40px -24px rgba(0,0,0,.7)}
+.plat:before{inset:0;height:auto;border-radius:inherit;padding:1px;box-shadow:none;
+  background:linear-gradient(160deg,color-mix(in srgb,var(--b) 70%,transparent),rgba(255,255,255,.06) 55%,color-mix(in srgb,var(--b) 30%,transparent));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.plat:after{content:"";position:absolute;left:15%;right:15%;bottom:-30px;height:60px;border-radius:50%;background:var(--b);opacity:.18;filter:blur(24px);pointer-events:none;transition:opacity .25s}
+.plat:hover{background:linear-gradient(155deg,color-mix(in srgb,var(--b) 16%,transparent),rgba(255,255,255,.03))}
+.plat:hover:after{opacity:.35}
+.plat svg{filter:drop-shadow(0 0 8px color-mix(in srgb,var(--b) 50%,transparent))}
+.plat.soon{opacity:.5}
+.p-twitch{--b:#8b5cff}.p-youtube{--b:#ff4f7a}.p-tiktok{--b:#f4f1ff}.p-facebook{--b:#5aa8ff}.p-instagram{--b:#ff4fb3}.p-discord{--b:#7a86ff}.p-paypal{--b:#5aa8ff}.p-web{--b:#3ee8ff}.p-bank{--b:#ffc94d}
+
+/* Chips, Zeitplan, Slots, IBAN */
+.chip{background:rgba(62,232,255,.07);border:1px solid rgba(62,232,255,.35);color:#bdf6ff;border-radius:999px;transform:none;padding:4px 14px}
+.sched li{border-left:0;border-radius:12px;background:linear-gradient(90deg,rgba(139,92,255,.16),rgba(255,255,255,.03) 60%);position:relative;overflow:hidden}
+.sched li:before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--cyan),var(--violet))}
+.sched li:nth-child(odd){background:linear-gradient(90deg,rgba(62,232,255,.12),rgba(255,255,255,.03) 60%)}
+.embed{border-radius:12px;overflow:hidden;background:#0b0620}
+.embed .ph{background:radial-gradient(circle at 50% 40%,rgba(139,92,255,.35),rgba(11,6,32,.95) 72%)}
+.embed .ph svg.big{fill:var(--violet);filter:drop-shadow(0 0 12px rgba(139,92,255,.7))}
+.slot{border:1px dashed rgba(62,232,255,.35);border-radius:14px;background:rgba(62,232,255,.035);color:#9eeefc}
+.slot:hover{background:rgba(62,232,255,.08);box-shadow:0 0 30px -10px rgba(62,232,255,.5)}
+.ibanline code{border-radius:10px;background:rgba(11,6,32,.55);border:1px solid rgba(255,201,77,.3);color:#ffd970}
+.vol{border-left:0;border-radius:12px;background:linear-gradient(90deg,rgba(255,201,77,.12),rgba(255,201,77,.03));box-shadow:inset 3px 0 0 var(--yellow);color:#f5ecd0}
+.gal button{clip-path:none;border-radius:14px}
+.gal button:after{border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18)}
+.ul li:before{background:var(--hot)}
+
+/* ---------- Buttons: lange, weiche Verläufe, dezenter Glow ---------- */
+.btn{background:var(--grad);background-size:160% 100%;background-position:0 0;transition:transform .2s,filter .2s,background-position .6s;
+  filter:drop-shadow(0 6px 14px rgba(139,92,255,.35))}
+.btn:hover{background-position:100% 0;filter:drop-shadow(0 8px 20px rgba(62,232,255,.4)) brightness(1.05)}
+.btn.gold{background:var(--hot);color:#2a1300;filter:drop-shadow(0 6px 16px rgba(255,201,77,.3))}
+.btn.gold:hover{filter:drop-shadow(0 8px 22px rgba(255,201,77,.5))}
+.btn.twitch{background:linear-gradient(120deg,#a07bff,#8b5cff 55%,#6d45e8)}
+.btn.ghost{background:rgba(255,255,255,.05);box-shadow:inset 0 0 0 1.5px rgba(62,232,255,.7);color:#e9fbff;filter:none;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.btn.ghost:hover{background:rgba(62,232,255,.1);filter:drop-shadow(0 6px 18px rgba(62,232,255,.3))}
+.btn.mail{background:var(--pinkgrad);filter:drop-shadow(0 6px 16px rgba(255,79,179,.35));animation:none}
+.btn.mail:hover{filter:drop-shadow(0 8px 22px rgba(255,79,179,.5))}
+.bank-btn{animation:none}
+.live-pill{background:var(--hot);color:#2a1300;box-shadow:0 3px 0 #b8730f,0 6px 18px -6px rgba(255,201,77,.6)}
+.live-pill i{background:var(--pink);box-shadow:0 0 8px var(--pink)}
+.photo .tag2{background:var(--violet)}
+.sbtn{border-radius:12px;clip-path:none;background:rgba(255,255,255,.06);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--b) 70%,transparent);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.sbtn svg{fill:var(--b)}
+.sbtn:hover{background:color-mix(in srgb,var(--b) 18%,transparent);filter:drop-shadow(0 6px 16px color-mix(in srgb,var(--b) 40%,transparent))}
+.sbtn.p-tiktok{--b:#f4f1ff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.5)}
+.sbtn.p-instagram,.sbtn.p-web{background:rgba(255,255,255,.06)}
+.toast{background:var(--grad);box-shadow:0 10px 30px -10px rgba(62,232,255,.6)}
+
+/* Logo & Hero */
+.logo .l2{background:var(--grad2);background-size:250% 100%;animation:flow 18s linear infinite}
+@keyframes logoPulse{0%,100%{filter:drop-shadow(0 0 10px rgba(62,232,255,.28)) drop-shadow(0 0 30px rgba(139,92,255,.2))}
+  50%{filter:drop-shadow(0 0 14px rgba(62,232,255,.42)) drop-shadow(0 0 40px rgba(255,79,179,.28))}}
+.logo.has-img img{animation-duration:6s}
+
+/* ---------- Comic-Foto: dicke schwarze Outline + Neon-Versatz ---------- */
 .photo{max-width:400px;padding:0 22px 22px 0}
-.photo .frame,.about .mini{clip-path:none;padding:0;background:#0b0716;border:6px solid #000;border-radius:10px;
-  box-shadow:8px 8px 0 #ff3fa4,16px 16px 0 #33f0ff,0 0 26px rgba(193,60,255,.45),18px 18px 50px rgba(51,240,255,.3);transform:rotate(-1.5deg)}
+.photo .frame,.about .mini{clip-path:none;padding:0;background:var(--night);border:6px solid #07030f;border-radius:14px;backdrop-filter:none;-webkit-backdrop-filter:none;
+  box-shadow:8px 8px 0 var(--pink),16px 16px 0 var(--cyan),0 30px 60px -20px rgba(139,92,255,.55);transform:rotate(-1.5deg)}
 .photo .frame:before,.about .mini:before,.photo .tick,.about .mini .tick,.photo:after{display:none}
-.photo img,.about .mini img{display:block;aspect-ratio:1/1;object-position:50% 50%;clip-path:none;border-radius:4px;filter:none}
-.photo .badge{left:-10px;bottom:40px;border:3px solid #000;box-shadow:4px 4px 0 #000}
-.photo .tag2{right:6px;top:18px;border:3px solid #000;box-shadow:4px 4px 0 #000,0 0 16px rgba(145,70,255,.6)}
+.photo img,.about .mini img{display:block;aspect-ratio:1/1;object-position:50% 50%;clip-path:none;border-radius:8px;filter:none}
+.photo .badge{left:-10px;bottom:40px;border:3px solid #07030f;box-shadow:4px 4px 0 #07030f}
+.photo .tag2{right:6px;top:18px;border:3px solid #07030f;box-shadow:4px 4px 0 #07030f}
 .about .mini{transform:rotate(1.5deg);margin:0 16px 16px 0}
+
+/* ---------- Footer: verschmilzt mit dem Hintergrund ---------- */
+footer{position:relative;background:linear-gradient(180deg,rgba(11,6,32,0),rgba(11,6,32,.6) 60%,rgba(8,4,24,.85));border-top:0}
+footer:before{content:"";position:absolute;left:10%;right:10%;top:0;height:1px;background:var(--grad2);opacity:.4;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 30%,#000 70%,transparent);mask-image:linear-gradient(90deg,transparent,#000 30%,#000 70%,transparent)}
+footer nav a,footer nav button{color:#d9d3f5}
+footer small{color:#9a92c4}
+
+/* Modal / Lightbox / Consent */
+.modal,.lb{background:rgba(11,6,32,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.mbox{box-shadow:0 30px 80px -20px rgba(0,0,0,.8),0 0 60px -20px rgba(139,92,255,.6);background:linear-gradient(155deg,rgba(30,18,70,.92),rgba(14,8,40,.94))}
+.bigiban{border-radius:12px;border:1px solid rgba(255,201,77,.45);background:rgba(11,6,32,.6);color:#ffd970;text-shadow:0 0 10px rgba(255,201,77,.35)}
+.consent .hud{background:linear-gradient(155deg,rgba(30,18,70,.9),rgba(14,8,40,.92))}
+
+@media(prefers-reduced-motion:reduce){
+  .bg .c,.bg:before,.bg:after,.logo .l2,.nav:after,.logo.has-img img{animation:none!important}
+  .btn,.card,.plat{transition:none}
+}
+
+/* ---------- Comic-Akzente (Outline, harte Versatz-Schatten, Halbton-Punkte) ---------- */
+.h2{-webkit-text-stroke:2px #140827;paint-order:stroke fill;filter:drop-shadow(3px 3px 0 #140827) drop-shadow(5px 5px 0 rgba(255,79,179,.55)) drop-shadow(0 0 18px rgba(255,201,77,.15))}
+.legal h1{-webkit-text-stroke:2px #140827;paint-order:stroke fill;filter:drop-shadow(3px 3px 0 #140827) drop-shadow(5px 5px 0 rgba(255,79,179,.55))}
+.btn{filter:drop-shadow(4px 4px 0 #07030f) drop-shadow(0 8px 18px rgba(139,92,255,.3))}
+.btn:hover{transform:translate(-2px,-2px);filter:drop-shadow(6px 6px 0 #07030f) drop-shadow(0 10px 22px rgba(62,232,255,.35))}
+.btn.gold{filter:drop-shadow(4px 4px 0 #07030f) drop-shadow(0 8px 18px rgba(255,201,77,.28))}
+.btn.gold:hover{filter:drop-shadow(6px 6px 0 #07030f) drop-shadow(0 10px 24px rgba(255,201,77,.45))}
+.btn.mail{filter:drop-shadow(4px 4px 0 #07030f) drop-shadow(0 8px 18px rgba(255,79,179,.3))}
+.btn.mail:hover{filter:drop-shadow(6px 6px 0 #07030f) drop-shadow(0 10px 24px rgba(255,79,179,.45))}
+.btn.ghost{filter:drop-shadow(4px 4px 0 #07030f)}
+.live-pill{box-shadow:3px 3px 0 #07030f,0 6px 18px -6px rgba(255,201,77,.6)}
+/* Halbton-Raster oben rechts in jeder Glas-Karte */
+.hud.card:after,.hud.stat:after,.plat .halftone{content:"";position:absolute;right:0;top:0;width:120px;height:90px;pointer-events:none;border-top-right-radius:inherit;
+  background:radial-gradient(circle,rgba(255,255,255,.22) 1.3px,transparent 1.8px) 0 0/9px 9px;
+  -webkit-mask-image:radial-gradient(120% 120% at 100% 0%,#000,transparent 70%);mask-image:radial-gradient(120% 120% at 100% 0%,#000,transparent 70%);opacity:.55}
+/* Kicker als kleine Comic-Sprechblase */
+.kicker{background:rgba(62,232,255,.1);border:1.5px solid rgba(62,232,255,.55);border-radius:999px;padding:2px 12px 1px;margin-bottom:10px;box-shadow:2px 2px 0 #07030f}
+.kicker:before{content:"★ ";color:var(--yellow)}
+/* Großer, sehr dezenter Halbton-Schimmer über dem Hero */
+.hero{position:relative}
+.hero:after{content:"";position:absolute;inset:-40px 0 auto;height:120%;z-index:-1;pointer-events:none;
+  background:radial-gradient(circle,rgba(62,232,255,.16) 1.4px,transparent 2px) 0 0/14px 14px;
+  -webkit-mask-image:radial-gradient(45% 55% at 75% 40%,#000,transparent 75%);mask-image:radial-gradient(45% 55% at 75% 40%,#000,transparent 75%)}
+@media(prefers-reduced-motion:reduce){.btn:hover{transform:none}}
