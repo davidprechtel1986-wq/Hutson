@@ -53,7 +53,7 @@ window.SITE = {
   socials: {
     twitch:    "https://twitch.tv/hudson2000",
     tiktok:    "https://www.tiktok.com/@videospiel.tv",
-    youtube:   "",   // TODO: YouTube-Kanal-Link von „David Hutson2000“ eintragen, z. B. "https://www.youtube.com/@DEIN-HANDLE"
+    youtube:   "https://www.youtube.com/@1986ibel",
     facebook:  "",   // z. B. "https://www.facebook.com/DEIN-NAME"
     instagram: "",   // optional, z. B. "https://www.instagram.com/DEIN-NAME"
     discord:   "https://discord.gg/erUT47vMTK"
