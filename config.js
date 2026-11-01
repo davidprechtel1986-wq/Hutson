@@ -86,7 +86,8 @@ window.SITE = {
      "VORNAME NACHNAME", "NAME DEINER BANK") oder nichts steht, wird die
      jeweilige Zeile / der PayPal-Button AUTOMATISCH ausgeblendet. */
   donate: {
-    paypal: "https://paypal.me/DEIN-NAME",        // dein PayPal.me-Link
+    paypal: "https://www.paypal.com/myaccount/transfer/homepage/pay",   // PayPal-Senden-Seite
+    paypalEmail: "david.prechtel1986@gmail.com",  // PayPal-Adresse
     iban: "DE08 2022 0800 0055 3577 32",          // deine IBAN (Prüfsumme geprüft ✔)
     holder: "VORNAME NACHNAME",                   // Kontoinhaber
     bank: "NAME DEINER BANK",                     // Name der Bank
