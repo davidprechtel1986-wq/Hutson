@@ -24,11 +24,46 @@
   var soc = S.socials||{}, names = S.socialNames||{};
   var twUrl = soc.twitch || (has(S.twitchChannel)?"https://twitch.tv/"+S.twitchChannel:"");
   if ($("heroTwitch")) { if (has(twUrl)) $("heroTwitch").href = twUrl; else hide($("heroTwitch")); }
+  if ($("hutsiTwitch")) { if (has(twUrl)) $("hutsiTwitch").href = twUrl; else hide($("hutsiTwitch")); }
 
-  /* ---------- Fotos ---------- */
+  /* ---------- Fotos: Hero = Hutsi, Über mich = David ---------- */
+  var heroSrc = has(S.mascot) ? S.mascot : S.photo;
+  var heroAlt = has(S.mascot) ? (S.mascotAlt||"Hutsi, das Maskottchen von HUTSON LIVE") : (S.photoAlt||"");
   if ($("photoImg")) {
-    if (has(S.photo)) { $("photoImg").src = S.photo; $("photoImg").alt = S.photoAlt||""; $("aboutImg").src = S.photo; $("aboutImg").alt = S.photoAlt||""; }
-    else { hide($("heroPhoto")); hide($("aboutPhoto")); }
+    if (has(heroSrc)) { $("photoImg").src = heroSrc; $("photoImg").alt = heroAlt; }
+    else hide($("heroPhoto"));
+  }
+  if ($("heroPhoto")) {
+    if (has(S.mascot)) $("heroPhoto").classList.add("is-mascot");
+    else $("heroPhoto").classList.remove("is-mascot");
+  }
+  if ($("heroBadge")) $("heroBadge").textContent = has(S.mascot) ? (S.mascotBadge||"HUTSI") : "PLAYER 1";
+  if ($("heroTag")) $("heroTag").textContent = has(S.mascot) ? (S.mascotTag||"MASKOTTCHEN") : "GAMING";
+  if ($("aboutImg")) {
+    if (has(S.photo)) { $("aboutImg").src = S.photo; $("aboutImg").alt = S.photoAlt||""; }
+    else hide($("aboutPhoto"));
+  }
+
+  /* ---------- Trefft Hutsi ---------- */
+  var H = S.hutsi||{};
+  if ($("hutsi")) {
+    var hutsiParas = (H.text||[]).filter(function(p){return has(p)});
+    if (!has(H.image) && !hutsiParas.length) hide($("hutsi"));
+    else {
+      if ($("hutsiKicker") && has(H.kicker)) $("hutsiKicker").textContent = H.kicker;
+      if ($("hutsiTitle") && has(H.title)) $("hutsiTitle").textContent = H.title;
+      if ($("hutsiLead")) { if (has(H.lead)) $("hutsiLead").textContent = H.lead; else hide($("hutsiLead")); }
+      if ($("hutsiImg")) {
+        if (has(H.image)) { $("hutsiImg").src = H.image; $("hutsiImg").alt = H.alt||"Hutsi"; }
+        else hide($("hutsiPhoto"));
+      }
+      if ($("hutsiText")) $("hutsiText").innerHTML = hutsiParas.map(function(p){return "<p>"+esc(p)+"</p>"}).join("");
+      if ($("hutsiChips")) {
+        var chips = (H.chips||[]).filter(function(c){return has(c)});
+        if (chips.length) $("hutsiChips").innerHTML = chips.map(function(c){return '<span class="chip">'+esc(c)+'</span>'}).join("");
+        else hide($("hutsiChips"));
+      }
+    }
   }
 
   /* ---------- Plattform-Karten ---------- */
@@ -93,7 +128,10 @@
   }
   if ($("gal")) {
     if (!G.length) hide($("galerie"));
-    $("gal").innerHTML = G.map(function(g,i){return '<button type="button" data-i="'+i+'" aria-label="Bild öffnen: '+esc(g.title||"")+'"><img src="'+esc(g.src)+'" alt="'+esc(g.title||"")+'" loading="lazy" width="800" height="600">'+(has(g.title)?'<span class="gal-cap">'+esc(g.title)+'</span>':'')+'</button>'}).join("");
+    $("gal").innerHTML = G.map(function(g,i){
+      var focus = (has(g.focus) && /^[0-9.%a-z\s]+$/i.test(g.focus)) ? ' style="object-position:'+g.focus+'"' : '';
+      return '<button type="button" class="'+(g.featured?'featured':'')+'" data-i="'+i+'" aria-label="Bild öffnen: '+esc(g.title||"")+'"><img src="'+esc(g.src)+'" alt="'+esc(g.title||"")+'" loading="lazy" width="800" height="600"'+focus+'>'+(has(g.title)?'<span class="gal-cap">'+esc(g.title)+'</span>':'')+'</button>';
+    }).join("");
     $("gal").onclick = function(e){ var b = e.target.closest("button"); if (b) show(+b.dataset.i, G); };
   }
 

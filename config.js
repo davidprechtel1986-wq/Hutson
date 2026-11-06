@@ -27,13 +27,34 @@ window.SITE = {
     full:   "logo-hutson-logo-720.png",
     shield: "logo-hutson-shield-128.png"
   },
-  slogan: "Gaming-Creator • Fortnite & viele weitere Games • Offen für Sponsoren",   // Zeile unter dem Logo
-  heroText: "Gaming-Streams voller Action – Fortnite, Minecraft und viele weitere Games, Clips auf TikTok & YouTube und eine Community, die wächst. Ich starte im Gaming richtig durch – und suche Marken & Partner, die mit dabei sein wollen.",
+  slogan: "Mit Hutsi live • Twitch, TikTok & YouTube • Offen für Sponsoren",   // Zeile unter dem Logo
+  heroText: "Hutsi ist das Maskottchen von HUTSON LIVE – Headset auf, Hoodie an, bei jedem Stream dabei. Fortnite, Minecraft und viele weitere Games, live auf Twitch, Clips auf TikTok und Videos auf YouTube. Die Marke wächst: Sponsoren und Partner sind willkommen.",
 
-  /* Dein Foto (liegt im Ordner images/). Einfach Datei austauschen
+  /* Hutsi, das Maskottchen. Bild liegt neben index.html.
+     Leer lassen ("") = im Hero bleibt dein Foto (photo). */
+  mascot: "hutsi-mascot.jpg",
+  mascotAlt: "Hutsi, das Maskottchen von HUTSON LIVE",
+  mascotBadge: "HUTSI",
+  mascotTag: "MASKOTTCHEN",
+
+  /* Dein Foto für „Über mich“. Einfach Datei austauschen
      oder hier einen anderen Dateinamen eintragen. Leer = kein Foto. */
   photo: "david.jpg",
   photoAlt: "David – HUTSON LIVE",
+
+  /* Abschnitt „Trefft Hutsi“. image leer = Abschnitt wird ausgeblendet. */
+  hutsi: {
+    kicker: "Maskottchen",
+    title: "Trefft Hutsi",
+    lead: "Das Gesicht von HUTSON LIVE – auf Twitch, TikTok und YouTube.",
+    image: "hutsi-mascot-original.jpg",
+    alt: "Hutsi im lila HUTSON-LIVE-Hoodie mit leuchtendem H",
+    text: [
+      "Hutsi ist das Maskottchen von HUTSON LIVE: ein kleiner Bär mit Kopfhörern und lila Hoodie, das leuchtende H auf der Brust. Wo der Stream läuft, ist Hutsi mit dabei.",
+      "Für Zuschauer ein festes Gesicht, für Sponsoren ein Zeichen, das man wiedererkennt – im Overlay, in Clips und hier auf der Seite."
+    ],
+    chips: ["Maskottchen", "Twitch", "TikTok", "YouTube", "Sponsoring"]
+  },
 
   /* ---------- Über mich ----------
      Jeder Eintrag in der Liste = ein eigener Absatz. */
@@ -98,16 +119,10 @@ window.SITE = {
   /* ---------- Stream-Zeiten ----------
      Tage und Uhrzeiten frei anpassbar. Einträge löschen oder hinzufügen. */
   schedule: [
-    { day: "Sonntag, 1.11.",    time: "19:00 – 22:00", game: "Fortnite" },
-    { day: "Montag, 2.11.",     time: "19:00 – 22:00", game: "Fortnite & mehr" },
-    { day: "Dienstag, 3.11.",   time: "19:00 – 22:00", game: "Fortnite & mehr" },
-    { day: "Mittwoch, 4.11.",   time: "19:00 – 22:00", game: "Fortnite & mehr" },
-    { day: "Donnerstag, 5.11.", time: "19:00 – 22:00", game: "Fortnite & mehr" },
-    { day: "Freitag, 6.11.",    time: "19:00 – 22:00", game: "Fortnite & mehr" },
-    { day: "Samstag, 7.11.",    time: "19:00 – 22:00", game: "Fortnite & mehr" },
-    { day: "Sonntag, 8.11.",    time: "19:00 – 22:00", game: "Fortnite & mehr" }
+    { day: "Montag – Freitag", time: "abends", game: "Gaming Live" },
+    { day: "Samstag & Sonntag", time: "abends", game: "Gaming Live" }
   ],
-  scheduleNote: "Alle Zeiten in deutscher Zeit. Spontane Streams kündige ich auf TikTok an!",
+  scheduleNote: "Abends Gaming Live auf Twitch – ohne festes Datum. Spontane Streams kündige ich auf TikTok und YouTube an.",
 
   /* ---------- Werbung & Media Kit ----------
      Reichweite: NUR echte Zahlen eintragen (z. B. "1.250").
@@ -148,6 +163,8 @@ window.SITE = {
        3. Speichern – fertig. Der Titel steht unter dem Bild und in der Großansicht.
      Tipp: Bilder vorher auf ca. 1600 Pixel Breite verkleinern, dann lädt die Seite schneller. */
   gallery: [
+    { src: "hutsi-mascot.jpg", title: "Hutsi – das Maskottchen von HUTSON LIVE", featured: true, focus: "center 42%" },
+    { src: "hutsi-mascot-original.jpg", title: "Hutsi im HUTSON-LIVE-Hoodie", featured: true, focus: "center 18%" },
     { src: "galerie-01.jpg", title: "Abendstimmung an der Stadtstraße – Minecraft" },
     { src: "galerie-02.jpg", title: "Regen auf dem Stadtplatz – Minecraft" },
     { src: "galerie-03.jpg", title: "Am Stadtrand von Silberstadt – Minecraft" },
