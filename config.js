@@ -119,10 +119,15 @@ window.SITE = {
   /* ---------- Stream-Zeiten ----------
      Tage und Uhrzeiten frei anpassbar. Einträge löschen oder hinzufügen. */
   schedule: [
-    { day: "Montag – Freitag", time: "abends", game: "Gaming Live" },
-    { day: "Samstag & Sonntag", time: "abends", game: "Gaming Live" }
+    { day: "Montag, 9.11.",      time: "19:00 – 22:00", game: "Fortnite & mehr" },
+    { day: "Dienstag, 10.11.",   time: "19:00 – 22:00", game: "Fortnite & mehr" },
+    { day: "Mittwoch, 11.11.",   time: "19:00 – 22:00", game: "Fortnite & mehr" },
+    { day: "Donnerstag, 12.11.", time: "19:00 – 22:00", game: "Fortnite & mehr" },
+    { day: "Freitag, 13.11.",    time: "19:00 – 22:00", game: "Fortnite & mehr" },
+    { day: "Samstag, 14.11.",    time: "19:00 – 22:00", game: "Fortnite & mehr" },
+    { day: "Sonntag, 15.11.",    time: "19:00 – 22:00", game: "Fortnite & mehr" }
   ],
-  scheduleNote: "Abends Gaming Live auf Twitch – ohne festes Datum. Spontane Streams kündige ich auf TikTok und YouTube an.",
+  scheduleNote: "Alle Zeiten in deutscher Zeit (Europe/Berlin).",
 
   /* ---------- Werbung & Media Kit ----------
      Reichweite: NUR echte Zahlen eintragen (z. B. "1.250").
