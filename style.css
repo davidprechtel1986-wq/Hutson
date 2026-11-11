@@ -490,8 +490,15 @@ footer small{color:#9a92c4}
 .legal h1{-webkit-text-stroke:2px #140827;paint-order:stroke fill;filter:drop-shadow(3px 3px 0 #140827) drop-shadow(5px 5px 0 rgba(255,79,179,.55))}
 .btn{filter:drop-shadow(4px 4px 0 #07030f) drop-shadow(0 8px 18px rgba(139,92,255,.3))}
 .btn:hover{transform:translate(-2px,-2px);filter:drop-shadow(6px 6px 0 #07030f) drop-shadow(0 10px 22px rgba(62,232,255,.35))}
-.btn.gold{filter:drop-shadow(4px 4px 0 #07030f) drop-shadow(0 8px 18px rgba(255,201,77,.28))}
-.btn.gold:hover{filter:drop-shadow(6px 6px 0 #07030f) drop-shadow(0 10px 24px rgba(255,201,77,.45))}
+.btn.gold,
+.btn.gold:hover,
+.nav .links a.btn.gold,
+.nav .links a.btn.gold:hover{color:#1a0f3a;text-shadow:none}
+.nav .links a.btn.gold,
+.nav .links a.btn.gold:hover{background:var(--hot)}
+.btn.gold svg{fill:#1a0f3a}
+.btn.gold{filter:drop-shadow(2px 2px 0 #3a2410) drop-shadow(0 3px 8px rgba(60,30,0,.22))}
+.btn.gold:hover{filter:drop-shadow(3px 3px 0 #3a2410) drop-shadow(0 4px 10px rgba(60,30,0,.3))}
 .btn.mail{filter:drop-shadow(4px 4px 0 #07030f) drop-shadow(0 8px 18px rgba(255,79,179,.3))}
 .btn.mail:hover{filter:drop-shadow(6px 6px 0 #07030f) drop-shadow(0 10px 24px rgba(255,79,179,.45))}
 .btn.ghost{filter:drop-shadow(4px 4px 0 #07030f)}
