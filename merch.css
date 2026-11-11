@@ -1,0 +1,78 @@
+/* HUTSON LIVE – Merch-Seite (ergänzt style.css) */
+.nav .links a.active{color:var(--yellow);background:rgba(255,201,77,.1)}
+
+/* Hero */
+.m-hero{position:relative;padding-top:28px}
+.m-hero-img{position:relative;border-radius:22px;overflow:hidden;box-shadow:0 30px 70px -30px rgba(0,0,0,.8),0 0 60px -24px rgba(139,92,255,.6)}
+.m-hero-img img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:70% 50%}
+.m-hero-img:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,2,26,.92) 0%,rgba(7,2,26,.55) 38%,rgba(7,2,26,0) 62%)}
+.m-hero-copy{position:relative;margin-top:-40px;padding:0 6px}
+.m-title{font-size:clamp(40px,9vw,84px);line-height:1;margin:14px 0 6px;letter-spacing:2px;filter:drop-shadow(0 4px 0 #2a0f55)}
+.m-hero .slogan{font-family:"AntonL",Impact,sans-serif;letter-spacing:1.5px;text-transform:uppercase;font-size:clamp(16px,2.6vw,22px)}
+.m-hero .txt{color:#e6e1fb;margin:12px 0 22px;max-width:560px;font-size:17px}
+.m-hero .btns{display:flex;flex-wrap:wrap;gap:12px}
+@media(min-width:900px){
+  .m-hero-copy{position:absolute;left:56px;top:50%;transform:translateY(-50%);margin:0;max-width:520px;padding:0}
+  .m-hero{padding-top:36px}
+}
+@media(max-width:899px){.m-hero-img:after{background:linear-gradient(180deg,rgba(7,2,26,0) 50%,rgba(7,2,26,.85) 100%)}}
+
+/* Story */
+.m-story{display:grid;gap:24px;align-items:center}
+@media(min-width:860px){.m-story{grid-template-columns:420px 1fr}}
+.m-story-img{padding:10px}
+.m-story-img img{border-radius:12px;width:100%}
+.m-story .ul{list-style:none;display:grid;gap:8px;margin:6px 0 0}
+
+/* Tabs */
+.m-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.m-tab{font-family:"AntonL",Impact,sans-serif;letter-spacing:1px;text-transform:uppercase;font-size:15px;padding:7px 16px;border-radius:999px;cursor:pointer;
+  background:rgba(62,232,255,.06);border:1px solid rgba(62,232,255,.35);color:#bdf6ff;transition:background .2s,color .2s}
+.m-tab:hover{background:rgba(62,232,255,.14)}
+.m-tab.on{background:var(--hot);border-color:transparent;color:#2a1300}
+
+/* Produkt-Grid */
+.m-grid{display:grid;gap:16px;grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(min-width:760px){.m-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(min-width:1080px){.m-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.m-card{padding:0;display:flex;flex-direction:column;overflow:hidden;transition:transform .25s,box-shadow .25s}
+.m-card:hover{transform:translateY(-4px);box-shadow:0 24px 50px -24px rgba(0,0,0,.75),0 0 46px -14px rgba(62,232,255,.45)}
+.m-img{position:relative;aspect-ratio:1;overflow:hidden;border-radius:18px 18px 0 0;background:#120530}
+.m-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.m-card:hover .m-img img{transform:scale(1.05)}
+.m-badge{position:absolute;left:10px;top:10px;padding:3px 10px;border-radius:999px;font-family:"Lucky",Impact,sans-serif;letter-spacing:1px;font-size:13px;
+  background:var(--hot);color:#2a1300;box-shadow:0 4px 12px -4px rgba(0,0,0,.6)}
+.m-badge.soon{left:auto;right:10px;background:rgba(11,6,32,.8);color:var(--cyan);border:1px solid rgba(62,232,255,.5)}
+.m-body{padding:12px 14px 14px;display:flex;flex-direction:column;flex:1}
+.m-body h3{font-family:"AntonL",Impact,sans-serif;font-weight:400;letter-spacing:.8px;font-size:clamp(16px,2.2vw,19px);line-height:1.2;text-transform:uppercase}
+.m-body p{color:var(--muted);font-size:13.5px;line-height:1.35;margin:4px 0 10px}
+.m-foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.m-price{font-family:"Lucky",Impact,sans-serif;font-size:clamp(19px,2.6vw,23px);letter-spacing:1px;color:var(--yellow);white-space:nowrap}
+.m-price.soon{color:var(--muted);font-size:16px}
+.m-foot .btn.small{padding:8px 12px;font-size:14px}
+.m-foot .btn svg{width:18px;height:18px}
+.m-via{display:block;margin-top:8px;color:#8f86b8;font-size:12px}
+.m-soon{opacity:.8;cursor:default;pointer-events:none}
+.m-card.is-soon .m-img img{filter:saturate(.75) brightness(.85)}
+@media(max-width:520px){
+  .m-grid{gap:10px}
+  .m-body{padding:10px}
+  .m-foot{flex-direction:column;align-items:stretch}
+  .m-foot .btn.small{width:100%}
+}
+
+/* Charity-Teaser */
+.m-charity{display:flex;gap:18px;align-items:center;padding:24px}
+.m-charity .em{font-size:52px;line-height:1}
+.m-charity h3{font-size:clamp(24px,4vw,34px);margin:2px 0 6px}
+.m-charity p{color:#e6e1fb;max-width:720px}
+@media(max-width:560px){.m-charity{flex-direction:column;text-align:center}}
+
+/* Teaser auf der Startseite */
+.m-teaser{display:grid;gap:18px;align-items:center;padding:14px}
+@media(min-width:860px){.m-teaser{grid-template-columns:1.3fr 1fr;padding:18px}}
+.m-teaser-img{display:block;border-radius:14px;overflow:hidden}
+.m-teaser-img img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:70% 50%;transition:transform .5s}
+.m-teaser-img:hover img{transform:scale(1.04)}
+.m-teaser-copy p{color:#e6e1fb;font-size:17px}
+.m-teaser-copy .cta-row{margin-top:16px}
