@@ -197,7 +197,7 @@
     var y = new Date().getFullYear();
     $("footer").innerHTML = '<a class="brand" href="index.html">'+shieldImg.replace('width="40" height="43"','width="56" height="60"')+esc(first)+(rest?" <span>"+esc(rest)+"</span>":"")+'</a>'+
       '<div style="margin-top:14px"><a class="btn mail small mailto" data-subject="Kontakt über HUTSON LIVE Webseite"><svg><use href="#i-mail"/></svg>Kontakt / E-Mail</a></div>'+
-      '<nav><a href="index.html#media-kit">Für Sponsoren</a><a href="merch.html">Merch</a>'+(has(S.website)?'<a href="'+esc(S.website)+'" target="_blank" rel="noopener">KI Web Studio – Websites & Web-Apps</a>':'')+
+      '<nav><a href="index.html#media-kit">Für Sponsoren</a><a href="merch.html">Shop</a>'+(has(S.website)?'<a href="'+esc(S.website)+'" target="_blank" rel="noopener">KI Web Studio – Websites & Web-Apps</a>':'')+
       '<a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><button type="button" id="cookieSettings">Cookie-Einstellungen</button></nav>'+
       '<small>© '+y+' '+esc(S.name||"")+' · Fortnite ist eine Marke von Epic Games. Diese Seite steht in keiner Verbindung zu Epic Games.</small>';
     $("cookieSettings").onclick = function(){ showBanner(true); };
@@ -256,4 +256,22 @@
     var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } }); }, {rootMargin:"0px 0px -8% 0px"});
     R.forEach(function(r){ io.observe(r) });
   } else R.forEach(function(r){ r.classList.add("in") });
+
+  /* ---------- Mobiles Menü ---------- */
+  var navToggle = document.querySelector(".nav-toggle");
+  var navBar = document.querySelector("header.nav");
+  if (navToggle && navBar) {
+    navToggle.addEventListener("click", function(){
+      var open = navBar.classList.toggle("is-open");
+      navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+      navToggle.textContent = open ? "Schließen" : "Menü";
+    });
+    var siteMenu = document.getElementById("siteMenu");
+    if (siteMenu) siteMenu.addEventListener("click", function(e){
+      if (!e.target.closest("a")) return;
+      navBar.classList.remove("is-open");
+      navToggle.setAttribute("aria-expanded", "false");
+      navToggle.textContent = "Menü";
+    });
+  }
 })();
