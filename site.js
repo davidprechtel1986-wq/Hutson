@@ -197,7 +197,7 @@
     var y = new Date().getFullYear();
     $("footer").innerHTML = '<a class="brand" href="index.html">'+shieldImg.replace('width="40" height="43"','width="56" height="60"')+esc(first)+(rest?" <span>"+esc(rest)+"</span>":"")+'</a>'+
       '<div style="margin-top:14px"><a class="btn mail small mailto" data-subject="Kontakt über HUTSON LIVE Webseite"><svg><use href="#i-mail"/></svg>Kontakt / E-Mail</a></div>'+
-      '<nav><a href="index.html#media-kit">Für Sponsoren</a>'+(has(S.website)?'<a href="'+esc(S.website)+'" target="_blank" rel="noopener">KI Web Studio – Websites & Web-Apps</a>':'')+
+      '<nav><a href="index.html#media-kit">Für Sponsoren</a><a href="merch.html">Merch</a>'+(has(S.website)?'<a href="'+esc(S.website)+'" target="_blank" rel="noopener">KI Web Studio – Websites & Web-Apps</a>':'')+
       '<a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><button type="button" id="cookieSettings">Cookie-Einstellungen</button></nav>'+
       '<small>© '+y+' '+esc(S.name||"")+' · Fortnite ist eine Marke von Epic Games. Diese Seite steht in keiner Verbindung zu Epic Games.</small>';
     $("cookieSettings").onclick = function(){ showBanner(true); };
