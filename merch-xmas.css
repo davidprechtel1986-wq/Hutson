@@ -77,6 +77,9 @@ body.xmas .brand span{color:var(--xmas-gold-2)}
 .xmas-motif .m-img{aspect-ratio:1;background:#2a0a16}
 .xmas-motif .m-img img{object-fit:cover}
 .xmas-motif .m-body h3{font-size:clamp(15px,2vw,18px)}
+.xmas-buys{display:flex;flex-direction:column;gap:8px;margin-top:auto}
+.xmas-buys .btn{width:100%;padding:8px 12px;font-size:14px}
+.xmas-buys .eur{font-family:Georgia,Times,"Times New Roman",serif;font-weight:700;margin-left:.06em;text-transform:none}
 
 /* Geschenk-Sets */
 .xmas-sets{display:grid;gap:16px}
