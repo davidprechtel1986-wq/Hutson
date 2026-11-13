@@ -37,6 +37,16 @@ window.MERCH = {
     { id:"buttons", cat:"zuhause", shop:"spreadshop", name:"Buttons (5er-Set)", sub:"Zum Anstecken", price:"9,99", img:"merch/merch-buttons.jpg", soon:true, link:"" },
     { id:"schluesselanhaenger", cat:"zuhause", shop:"spreadshop", name:"Schlüsselanhänger", sub:"Aluminium", price:"9,99", img:"merch/merch-schluesselanhaenger.jpg", soon:true, link:"" },
 
+
+    /* ---------- Neue Weihnachtsmotive 2026 ---------- */
+    { id:"xmas-sweater", cat:"weihnachten", shop:"spreadshop", name:"Ugly-Christmas-Sweater", sub:"Unisex Bio-Weihnachtspullover · Motiv 5", price:"36,99", img:"merch/xmas-motiv-sweater.jpg", badge:"XMAS", soon:true, link:"" },
+    { id:"xmas-hoodie-schnee", cat:"weihnachten", shop:"spreadshop", name:"Hoodie „Hutsi im Schnee“", sub:"Unisex · kuschelig warm", price:"34,99", img:"merch/xmas-motiv-schnee.jpg", badge:"XMAS", soon:true, link:"" },
+    { id:"xmas-shirt-muetze", cat:"weihnachten", shop:"spreadshop", name:"T-Shirt „Weihnachtsmütze“", sub:"Unisex & Frauen · S–3XL", price:"22,99", img:"merch/xmas-motiv-muetze.jpg", badge:"XMAS", soon:true, link:"" },
+    { id:"xmas-tasse-kamin", cat:"weihnachten", shop:"spreadshop", name:"Tasse „Hutsi am Kamin“", sub:"Keramik · 330 ml", price:"16,99", img:"merch/xmas-motiv-kamin.jpg", badge:"XMAS", soon:true, link:"" },
+    { id:"xmas-beanie", cat:"weihnachten", shop:"spreadshop", name:"Bommelmütze „Hutsi“", sub:"Für den Winter", price:"21,99", img:"merch/xmas-motiv-muetze.jpg", badge:"XMAS", soon:true, link:"" },
+    { id:"xmas-tasse-schrift", cat:"weihnachten", shop:"spreadshop", name:"Tasse „Frohe Weihnachten“", sub:"Keramik · Schriftzug-Motiv", price:"16,99", img:"merch/xmas-motiv-schriftzug.jpg", badge:"XMAS", soon:true, link:"" },
+    { id:"xmas-shirt-geschenke", cat:"weihnachten", shop:"spreadshop", name:"T-Shirt „Geschenke“", sub:"Unisex & Frauen · S–3XL", price:"22,99", img:"merch/xmas-motiv-geschenke.jpg", badge:"XMAS", soon:true, link:"" },
+
     /* ---------- Weihnachten (Spreadshop) ---------- */
     { id:"baumanhaenger", cat:"weihnachten", shop:"spreadshop", name:"Christbaum-Anhänger „Stern“", sub:"Keramik", price:"9,99", img:"merch/merch-baumanhaenger.jpg", badge:"XMAS", soon:true, link:"" },
     { id:"weihnachtsmuetze", cat:"weihnachten", shop:"spreadshop", name:"Weihnachtsmütze", sub:"Mit Hutsi-Druck", price:"14,99", img:"merch/merch-weihnachtsmuetze.jpg", badge:"XMAS", soon:true, link:"" },
