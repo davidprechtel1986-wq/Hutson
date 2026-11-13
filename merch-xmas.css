@@ -1,0 +1,100 @@
+/* HUTSON LIVE – weihnachtliche Merch-Seite */
+:root{
+  --xmas-red:#c41e3a;
+  --xmas-red-dark:#7a1022;
+  --xmas-gold:#e8c547;
+  --xmas-gold-2:#ffd56a;
+  --xmas-cream:#fff4d6;
+  --xmas-pine:#16301c;
+}
+body.xmas{
+  background:#14040c;
+  --deep:#14040c; --deep2:#2a0a16;
+}
+body.xmas .bg{
+  background:radial-gradient(ellipse at 50% 0%,#5a1024 0%,#2a0814 42%,#0c0308 100%);
+}
+body.xmas .bg .c1{background:radial-gradient(circle,#c41e3a,transparent 60%);opacity:.35}
+body.xmas .bg .c2{background:radial-gradient(circle,#e8c547,transparent 60%);opacity:.22}
+body.xmas .bg .c3{background:radial-gradient(circle,#7b2cff,transparent 58%);opacity:.22}
+body.xmas .nav{background:rgba(40,8,16,.86);border-bottom-color:rgba(232,197,71,.45)}
+body.xmas .nav:after{background:linear-gradient(90deg,#7a1022,#e8c547,#c41e3a,#ffe14d,#7a1022);background-size:300% 100%}
+body.xmas .brand span{color:var(--xmas-gold-2)}
+
+
+/* Schneeflocken */
+.xmas-snow{position:fixed;inset:0;pointer-events:none;z-index:30;overflow:hidden}
+.xmas-snow i{
+  position:absolute;top:-8%;color:#fff;opacity:.75;
+  font-style:normal;text-shadow:0 0 8px rgba(255,255,255,.6);
+  animation:xmas-fall linear infinite;
+}
+@keyframes xmas-fall{
+  0%{transform:translateY(0) rotate(0deg)}
+  100%{transform:translateY(110vh) rotate(360deg)}
+}
+
+/* Banner */
+.xmas-banner{
+  position:relative;margin:0 auto;max-width:1180px;padding:18px 16px 0;
+}
+.xmas-banner-inner{
+  position:relative;overflow:hidden;border-radius:18px;
+  background:
+    linear-gradient(180deg,rgba(196,30,58,.18),rgba(20,4,12,.2)),
+    linear-gradient(135deg,#6b1224 0%,#3a0c1c 50%,#1a0810 100%);
+  border:2px solid var(--xmas-gold);
+  box-shadow:0 0 0 4px rgba(122,16,34,.5),0 20px 50px -20px rgba(0,0,0,.7),0 0 40px rgba(232,197,71,.2);
+  padding:22px 22px 20px;text-align:center;
+}
+.xmas-banner-inner:before,.xmas-banner-inner:after{
+  content:"";position:absolute;left:0;right:0;height:8px;
+  background:repeating-linear-gradient(90deg,#c41e3a 0 16px,#e8c547 16px 32px,#16301c 32px 40px,#e8c547 40px 48px);
+}
+.xmas-banner-inner:before{top:0}
+.xmas-banner-inner:after{bottom:0}
+.xmas-banner-kicker{
+  font-family:"AntonL",Impact,sans-serif;letter-spacing:4px;text-transform:uppercase;
+  color:var(--xmas-gold-2);font-size:14px;margin:8px 0 4px;
+}
+.xmas-banner h2{
+  font-family:"Lucky",Impact,sans-serif;letter-spacing:1.5px;
+  font-size:clamp(28px,6.4vw,58px);line-height:1.05;margin:0 0 10px;
+  color:var(--xmas-gold-2);
+  text-shadow:0 3px 0 #7a1022,0 0 22px rgba(232,197,71,.45);
+}
+.xmas-deadline{
+  max-width:720px;margin:0 auto;color:#ffe9d2;font-size:16px;
+  background:rgba(0,0,0,.28);border:1px solid rgba(232,197,71,.35);
+  border-radius:12px;padding:10px 14px;
+}
+.xmas-deadline strong{color:var(--xmas-gold-2)}
+
+/* Motiv-Galerie */
+.xmas-motifs{display:grid;gap:16px;grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(min-width:860px){.xmas-motifs{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.xmas-motif{padding:0;overflow:hidden}
+.xmas-motif .m-img{aspect-ratio:1;background:#2a0a16}
+.xmas-motif .m-img img{object-fit:cover}
+.xmas-motif .m-body h3{font-size:clamp(15px,2vw,18px)}
+
+/* Geschenk-Sets */
+.xmas-sets{display:grid;gap:16px}
+@media(min-width:860px){.xmas-sets{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.xmas-set{padding:18px 18px 20px;display:flex;flex-direction:column;gap:8px}
+.xmas-set .em{font-size:36px;line-height:1}
+.xmas-set h3{font-family:"Lucky",Impact,sans-serif;letter-spacing:1px;font-size:clamp(20px,3vw,26px);color:var(--xmas-gold-2)}
+.xmas-set p{color:#f3e8ff;font-size:15px}
+.xmas-set .price{font-family:"Lucky",Impact,sans-serif;color:var(--yellow);font-size:22px}
+.xmas-set .via{color:#cbb8e8;font-size:13px}
+.xmas-set ul{margin:4px 0 0 18px;color:#e6e1fb;font-size:14.5px}
+
+body.xmas .m-tab.on{background:linear-gradient(180deg,#fff27a,#ffd21f 45%,#c41e3a);color:#2a1300}
+body.xmas .m-badge{background:linear-gradient(180deg,#fff27a,#ff9a1f);color:#2a1300}
+body.xmas .m-charity{border:1px solid rgba(232,197,71,.4)}
+
+body.xmas .reveal{opacity:1;transform:none}
+
+.xmas-set .price .eur{font-family:Georgia,Times,"Times New Roman",serif;font-weight:700;margin-left:.08em}
+
+body.xmas .m-price .eur{font-family:Georgia,Times,"Times New Roman",serif;font-weight:700;margin-left:.06em}

@@ -18,7 +18,7 @@
 
   function card(p){
     var l = p.soon ? null : linkFor(p);
-    var price = has(p.price) ? '<span class="m-price">'+esc(p.price)+' €</span>' : '<span class="m-price soon">bald</span>';
+    var price = has(p.price) ? '<span class="m-price">'+esc(p.price)+' <span class="eur">€</span></span>' : '<span class="m-price soon">bald</span>';
     var btn = p.soon
       ? '<span class="btn small ghost m-soon" aria-disabled="true">Bald verfügbar</span>'
       : '<a class="btn small'+(p.cat==="digital"?' gold':'')+' m-go" href="'+esc(l.href)+'"'+(l.ph?' data-placeholder="'+esc(p.shop)+'"':' target="_blank" rel="noopener"')+' data-shop="'+esc(p.shop)+'" data-id="'+esc(p.id)+'"><svg><use href="#i-bag"/></svg>'+(p.cat==="digital"?"Sofort kaufen":"Kaufen")+'</a>';
