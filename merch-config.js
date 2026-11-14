@@ -16,24 +16,24 @@ window.MERCH = {
     { id:"wallpaper", cat:"digital", shop:"kofi", name:"Hutsi Handy-Wallpaper-Pack", sub:"5 Hintergründe · Gaming & Winter", price:"1,99", img:"merch/merch-wallpaper.jpg", soon:true, link:"" },
 
     /* ---------- Kleidung (Spreadshop) ---------- */
-    { id:"tshirt", cat:"kleidung", shop:"spreadshop", name:"T-Shirt „Hutsi“", sub:"Unisex & Frauen · S–3XL", price:"22,99", img:"merch/merch-tshirt.jpg", badge:"TOP", link:"" },
-    { id:"hoodie", cat:"kleidung", shop:"spreadshop", name:"Hoodie „Hutsi“", sub:"Unisex · kuschelig warm", price:"34,99", img:"merch/merch-hoodie.jpg", link:"" },
-    { id:"polo", cat:"kleidung", shop:"spreadshop", name:"Polo-Shirt", sub:"Kleines Hutsi-Logo auf der Brust", price:"27,99", img:"merch/merch-polo.jpg", link:"" },
+    { id:"tshirt", cat:"kleidung", shop:"spreadshop", name:"T-Shirt „Hutsi“", sub:"Unisex & Frauen · S–3XL", price:"22,99", img:"merch/merch-tshirt.jpg", badge:"TOP", link:"https://hutsonlive.myspreadshop.de/gg+hutson+live-A3289c62104aa5612?sellable=ro18lhh0juoi-6&appearance=2" },
+    { id:"hoodie", cat:"kleidung", shop:"spreadshop", name:"Hoodie „Hutsi“", sub:"Unisex · kuschelig warm", price:"34,99", img:"merch/merch-hoodie.jpg", link:"https://hutsonlive.myspreadshop.de/gg+hutson+live-A3289c62104aa5612?sellable=ro18lhh0juoi-1047&appearance=577" },
+    { id:"polo", cat:"kleidung", shop:"spreadshop", name:"Polo-Shirt", sub:"Kleines Hutsi-Logo auf der Brust", price:"27,99", img:"merch/merch-polo.jpg", link:"https://hutsonlive.myspreadshop.de/all" },
     { id:"kinder-shirt", cat:"kleidung", shop:"spreadshop", name:"Kinder-T-Shirt", sub:"Für die kleinen Fans", price:"17,99", img:"merch/merch-kinder-shirt.jpg", soon:true, link:"" },
     { id:"kinder-hoodie", cat:"kleidung", shop:"spreadshop", name:"Kinder-Hoodie", sub:"Für die kleinen Fans", price:"31,99", img:"merch/merch-kinder-hoodie.jpg", soon:true, link:"" },
-    { id:"cap", cat:"kleidung", shop:"spreadshop", name:"Cap", sub:"Baseballkappe, verstellbar", price:"22,99", img:"merch/merch-cap.jpg", link:"" },
+    { id:"cap", cat:"kleidung", shop:"spreadshop", name:"Cap", sub:"Baseballkappe, verstellbar", price:"22,99", img:"merch/merch-cap.jpg", link:"https://hutsonlive.myspreadshop.de/gg+hutson+live-A3289c62104aa5612?sellable=ro18lhh0juoi-15&appearance=13" },
     { id:"muetze", cat:"kleidung", shop:"spreadshop", name:"Bommelmütze", sub:"Für den Winter", price:"21,99", img:"merch/merch-muetze.jpg", soon:true, link:"" },
     { id:"socken", cat:"kleidung", shop:"spreadshop", name:"Socken", sub:"Tennissocken mit Hutsi", price:"21,99", img:"merch/merch-socken.jpg", soon:true, link:"" },
 
     /* ---------- Zuhause & Gaming (Spreadshop) ---------- */
-    { id:"tasse", cat:"zuhause", shop:"spreadshop", name:"Tasse „Hutsi“", sub:"Keramik · 330 ml", price:"16,99", img:"merch/merch-tasse.jpg", badge:"TOP", link:"" },
-    { id:"mousepad", cat:"zuhause", shop:"spreadshop", name:"Gaming-Mousepad groß", sub:"Für dein Setup", price:"17,99", img:"merch/merch-mousepad.jpg", link:"" },
+    { id:"tasse", cat:"zuhause", shop:"spreadshop", name:"Tasse „Hutsi“", sub:"Keramik · 330 ml", price:"16,99", img:"merch/merch-tasse.jpg", badge:"TOP", link:"https://hutsonlive.myspreadshop.de/gg+hutson+live-A3289c62104aa5612?sellable=ro18lhh0juoi-31&appearance=1" },
+    { id:"mousepad", cat:"zuhause", shop:"spreadshop", name:"Gaming-Mousepad groß", sub:"Für dein Setup", price:"17,99", img:"merch/merch-mousepad.jpg", link:"https://hutsonlive.myspreadshop.de/nur+noch+eine+runde-A3289c621eaa23dca?sellable=ro18lj8tn3d6-3924&appearance=272" },
     { id:"poster", cat:"zuhause", shop:"spreadshop", name:"Poster", sub:"40 × 60 cm", price:"12,99", img:"merch/merch-poster.jpg", soon:true, link:"" },
-    { id:"kissen", cat:"zuhause", shop:"spreadshop", name:"Sofakissen mit Füllung", sub:"45 × 45 cm", price:"22,99", img:"merch/merch-kissen.jpg", link:"" },
+    { id:"kissen", cat:"zuhause", shop:"spreadshop", name:"Sofakissen mit Füllung", sub:"45 × 45 cm", price:"22,99", img:"merch/merch-kissen.jpg", link:"https://hutsonlive.myspreadshop.de/all" },
     { id:"trinkflasche", cat:"zuhause", shop:"spreadshop", name:"Trinkflasche", sub:"750 ml mit Karabiner", price:"21,99", img:"merch/merch-trinkflasche.jpg", soon:true, link:"" },
     { id:"puzzle", cat:"zuhause", shop:"spreadshop", name:"Puzzle", sub:"19 × 28 cm", price:"14,99", img:"merch/merch-puzzle.jpg", soon:true, link:"" },
-    { id:"stoffbeutel", cat:"zuhause", shop:"spreadshop", name:"Stoffbeutel", sub:"Baumwolle", price:"16,99", img:"merch/merch-stoffbeutel.jpg", link:"" },
-    { id:"sticker", cat:"zuhause", shop:"spreadshop", name:"Sticker", sub:"10 × 10 cm", price:"4,99", img:"merch/merch-sticker.jpg", link:"" },
+    { id:"stoffbeutel", cat:"zuhause", shop:"spreadshop", name:"Stoffbeutel", sub:"Baumwolle", price:"16,99", img:"merch/merch-stoffbeutel.jpg", link:"https://hutsonlive.myspreadshop.de/gg+hutson+live-A3289c62104aa5612?sellable=ro18lhh0juoi-56&appearance=404" },
+    { id:"sticker", cat:"zuhause", shop:"spreadshop", name:"Sticker", sub:"10 × 10 cm", price:"4,99", img:"merch/merch-sticker.jpg", link:"https://hutsonlive.myspreadshop.de/gg+hutson+live-A3289c62104aa5612?sellable=ro18lhh0juoi-4505&appearance=839" },
     { id:"buttons", cat:"zuhause", shop:"spreadshop", name:"Buttons (5er-Set)", sub:"Zum Anstecken", price:"9,99", img:"merch/merch-buttons.jpg", soon:true, link:"" },
     { id:"schluesselanhaenger", cat:"zuhause", shop:"spreadshop", name:"Schlüsselanhänger", sub:"Aluminium", price:"9,99", img:"merch/merch-schluesselanhaenger.jpg", soon:true, link:"" },
 
