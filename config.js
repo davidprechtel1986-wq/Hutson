@@ -213,9 +213,13 @@ window.SITE = {
       title: "Agentur videospiel.tv",
       tag: "Gaming-Agentur · Mitspieler & Creator gesucht",
       logo: "projekt-agentur-logo.jpg",
-      text: "Mit meiner Gaming-Agentur videospiel.tv bringe ich Gamer, Streamer und Creator zusammen – für gemeinsame Streams, Events, Turniere und Projekte. Du willst mitzocken oder selbst durchstarten? Komm auf den Discord und bewirb dich im Kanal #bewerbungen.",
+      text: "Mit meiner Gaming-Agentur videospiel.tv bringe ich Gamer, Streamer und Creator zusammen – für gemeinsame Streams, Events, Turniere und Projekte. Du willst mitzocken oder selbst durchstarten? Komm auf den Discord und bewirb dich im Kanal #bewerbungen. TikTok-Streamer können direkt der HUTSON Agency auf TikTok LIVE beitreten.",
       facts: ["Mitspieler gesucht", "Streamer & Creator", "Events & Turniere"],
       servers: [],
+      tiktokLive: {
+        label: "TikTok-Streamer? Direkt der HUTSON Agency auf TikTok LIVE beitreten",
+        url: "https://www.tiktok.com/t/ZSpCxTvuW/"
+      },
       buttons: [
         { label: "Im Discord bewerben", url: "https://discord.gg/erUT47vMTK", style: "discord", icon: "discord" },
         { label: "Per E-Mail bewerben", mail: "Bewerbung Agentur videospiel.tv", style: "mail", icon: "mail" }
