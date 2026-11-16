@@ -220,7 +220,11 @@
         if (!has(b.url)) return '';
         return '<a class="btn small '+esc(b.style||"")+'" href="'+esc(b.url)+'" target="_blank" rel="noopener">'+ic+esc(b.label)+'</a>';
       }).join("");
-      return '<article class="hud pj'+(imgs.length?' has-media':'')+'">'+media+'<div class="pj-body">'+head+(has(p.text)?'<p class="pj-text">'+esc(p.text)+'</p>':'')+facts+(srv?'<div class="pj-srvs">'+srv+'</div>':'')+(btns?'<div class="pj-btns">'+btns+'</div>':'')+'</div></article>';
+      var live = p.tiktokLive||{};
+      var join = (has(live.label) && has(live.url))
+        ? '<a class="tt-join" href="'+esc(live.url)+'" target="_blank" rel="noopener"><span class="tt-join-icon" aria-hidden="true"><svg><use href="#i-tiktok"/></svg></span><span class="tt-join-label">'+esc(live.label)+'</span></a>'
+        : '';
+      return '<article class="hud pj'+(imgs.length?' has-media':'')+'">'+media+'<div class="pj-body">'+head+(has(p.text)?'<p class="pj-text">'+esc(p.text)+'</p>':'')+facts+join+(srv?'<div class="pj-srvs">'+srv+'</div>':'')+(btns?'<div class="pj-btns">'+btns+'</div>':'')+'</div></article>';
     }).join("");
     $("projects").onclick = function(e){
       var c = e.target.closest(".pj-copy"); if (c) { copyText(c.dataset.copy); return; }
